@@ -32,7 +32,7 @@
     font: 17px/1.6 Georgia, "Iowan Old Style", "Times New Roman", serif;
   }
   main { max-width: 44rem; margin: 0 auto; padding: 4rem 1rem 3rem; }
-  h1, h2, h3, .label { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  h1, h2, h3 { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
   h1 { font-size: 2.2rem; line-height: 1.15; margin: 0 0 1rem; letter-spacing: -0.01em; }
   h2 { font-size: 1.1rem; margin: 3rem 0 1rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
   h3 { font-size: 1.15rem; margin: 0 0 0.4rem; }
@@ -49,18 +49,12 @@
     margin-bottom: 1rem;
   }
   .card p:last-child { margin-bottom: 0; }
-  .label {
-    display: inline-block;
-    font-size: 0.75rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+  .note {
+    border-left: 3px solid var(--accent);
+    padding: 0.2rem 0 0.2rem 1rem;
     color: var(--muted);
-    border: 1px solid var(--rule);
-    border-radius: 999px;
-    padding: 0.05rem 0.55rem;
-    margin-left: 0.4rem;
-    vertical-align: 2px;
   }
+  ul.team { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
   footer { border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1.2rem; color: var(--muted); font-size: 0.95rem; }
 </style>
 </head>
@@ -76,6 +70,12 @@
   argument is mistaken for a result, and a mathematician facing the output cannot tell what is
   proved and what is open. This project builds the structure and the tools that prevent this,
   and tests them on real questions.</p>
+
+  <p class="note">What follows is a proposal, not a finished method. The tools and the practice
+  of research with AI agents change quickly, and this framework will change with them.
+  Feedback is welcome: open a <a href="https://github.com/human-ai-mathematics/conjecture-search-template/discussions">discussion</a>
+  or an <a href="https://github.com/human-ai-mathematics/conjecture-search-template/issues">issue</a>
+  on GitHub.</p>
 
   <h2>Principles</h2>
   <ol class="aims">
@@ -100,16 +100,18 @@
   </div>
 
   <div class="card">
-    <h3>Conjecture search template <span class="label">Coming soon</span></h3>
+    <h3><a href="https://github.com/human-ai-mathematics/conjecture-search-template">Conjecture search template</a></h3>
     <p>The reusable research harness behind the KLS manuscript, with no mathematics in it: a
     MyST manuscript, a ledger of claims and their certifications, and researcher, reviewer and
-    writer agents.</p>
+    writer agents. Start a new search from it.</p>
   </div>
 
-  <div class="card">
-    <h3>Lean formalization <span class="label">In progress</span></h3>
-    <p>Machine-checked proofs of the functional inequalities used along the way toward KLS.</p>
-  </div>
+  <h2>Team</h2>
+  <ul class="team">
+    <li><a href="https://github.com/nbrosse">Nicolas Brosse</a></li>
+    <li><a href="https://github.com/liyongsea">Jia Li</a></li>
+    <li><a href="https://github.com/lyw-ops">Yuwei</a></li>
+  </ul>
 
   <footer>
     <p>Supported by <a href="https://projectnumina.ai/">Project Numina</a>.</p>
