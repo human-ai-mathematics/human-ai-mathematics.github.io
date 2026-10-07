@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Human–AI Mathematics</title>
+<meta name="description" content="Mathematical research done by humans and AI agents together, where every result is checked and certified.">
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --fg: #1d2330;
+    --muted: #5b6372;
+    --rule: #e3e0d8;
+    --card: #ffffff;
+    --accent: #c4511a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151c;
+      --fg: #e6e8ec;
+      --muted: #a0a7b4;
+      --rule: #2a2f3a;
+      --card: #191d26;
+      --accent: #f0864a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.6 Georgia, "Iowan Old Style", "Times New Roman", serif;
+  }
+  main { max-width: 44rem; margin: 0 auto; padding: 4rem 1rem 3rem; }
+  h1, h2, h3, .label { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  h1 { font-size: 2.2rem; line-height: 1.15; margin: 0 0 1rem; letter-spacing: -0.01em; }
+  h2 { font-size: 1.1rem; margin: 3rem 0 1rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+  h3 { font-size: 1.15rem; margin: 0 0 0.4rem; }
+  p { margin: 0 0 1rem; }
+  .lede { font-size: 1.2rem; color: var(--muted); }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  ol.aims { padding-left: 1.3rem; }
+  ol.aims li { margin-bottom: 0.6rem; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 1.2rem 1.3rem;
+    margin-bottom: 1rem;
+  }
+  .card p:last-child { margin-bottom: 0; }
+  .label {
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 0.05rem 0.55rem;
+    margin-left: 0.4rem;
+    vertical-align: 2px;
+  }
+  footer { border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1.2rem; color: var(--muted); font-size: 0.95rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Human–AI Mathematics</h1>
+  <p class="lede">Mathematical research done by humans and AI agents together, organized so that
+  every result can be trusted, read and checked by a mathematician.</p>
+
+  <p>AI agents can now produce a large volume of mathematical work on a hard question: proof
+  attempts, reductions, numerical experiments, candidate counterexamples. Left unstructured, that
+  volume works against the research. What was learned is lost between sessions, a plausible
+  argument is mistaken for a result, and a mathematician facing the output cannot tell what is
+  proved and what is open. This project builds the structure and the tools that prevent this,
+  and tests them on real questions.</p>
+
+  <h2>Principles</h2>
+  <ol class="aims">
+    <li><strong>Organize the search.</strong> One target statement, a portfolio of routes and dated
+    checkpoints, so that many agents over many sessions work as one search.</li>
+    <li><strong>Make every status trustworthy.</strong> A claim is proved or refuted only through a
+    certification tied to the exact text examined: an independent review, or the explicit
+    acceptance of a named person. Evidence guides the search; it never moves a status.</li>
+    <li><strong>Open the research to mathematicians.</strong> The output reads like a paper, says
+    what is settled and what is not, and shows where a reader can help.</li>
+    <li><strong>Spend sparingly.</strong> Agent calls are the search's budget, and each one is
+    launched for a result that needs it.</li>
+  </ol>
+
+  <h2>Projects</h2>
+
+  <div class="card">
+    <h3><a href="kls-conjecture-search/">The Kannan–Lovász–Simonovits frontier</a></h3>
+    <p>A manuscript on the KLS conjecture, now a theorem: a complete account of the three recent
+    proofs, a comparison of them, and alternative mechanisms for the dimension-free Poincaré bound,
+    produced by a sustained human–AI search. Each statement shows who checked it.</p>
+  </div>
+
+  <div class="card">
+    <h3>Conjecture search template <span class="label">Coming soon</span></h3>
+    <p>The reusable research harness behind the KLS manuscript, with no mathematics in it: a
+    MyST manuscript, a ledger of claims and their certifications, and researcher, reviewer and
+    writer agents.</p>
+  </div>
+
+  <div class="card">
+    <h3>Lean formalization <span class="label">In progress</span></h3>
+    <p>Machine-checked proofs of the functional inequalities used along the way toward KLS.</p>
+  </div>
+
+  <footer>
+    <p>Supported by <a href="https://projectnumina.ai/">Project Numina</a>.</p>
+  </footer>
+</main>
+</body>
+</html>
