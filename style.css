@@ -1,0 +1,72 @@
+/* The shared style of every page of the site. */
+
+:root {
+  --bg: #fbfaf7;
+  --fg: #1d2330;
+  --muted: #5b6372;
+  --rule: #e3e0d8;
+  --card: #ffffff;
+  --accent: #c4511a;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12151c;
+    --fg: #e6e8ec;
+    --muted: #a0a7b4;
+    --rule: #2a2f3a;
+    --card: #191d26;
+    --accent: #f0864a;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 17px/1.6 Georgia, "Iowan Old Style", "Times New Roman", serif;
+}
+main { max-width: 44rem; margin: 0 auto; padding: 4rem 1rem 3rem; }
+h1, h2, h3 { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+h1 { font-size: 2.2rem; line-height: 1.15; margin: 0 0 1rem; letter-spacing: -0.01em; }
+h2 { font-size: 1.1rem; margin: 3rem 0 1rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+h3 { font-size: 1.15rem; margin: 0 0 0.4rem; }
+p { margin: 0 0 1rem; }
+a { color: var(--accent); text-underline-offset: 3px; }
+code { font-size: 0.85em; overflow-wrap: anywhere; }
+.lede { font-size: 1.2rem; color: var(--muted); }
+
+/* The link back to the parent page, at the top of a sub-page. */
+.back { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 0.95rem; margin-bottom: 2rem; }
+
+ol.aims, ol.steps, ul.plain { padding-left: 1.3rem; }
+ol.aims li { margin-bottom: 0.6rem; }
+ol.steps li, ul.plain li { margin-bottom: 0.8rem; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 1.2rem 1.3rem;
+  margin-bottom: 1rem;
+}
+.card p:last-child { margin-bottom: 0; }
+
+/* A card's status: "Available" (accented) or "Being explored". */
+.tag {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font: 600 0.72rem/1 system-ui, -apple-system, "Segoe UI", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.tag.live { color: var(--accent); }
+
+.note {
+  border-left: 3px solid var(--accent);
+  padding: 0.2rem 0 0.2rem 1rem;
+  color: var(--muted);
+}
+
+ul.team { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+footer { border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1.2rem; color: var(--muted); font-size: 0.95rem; }

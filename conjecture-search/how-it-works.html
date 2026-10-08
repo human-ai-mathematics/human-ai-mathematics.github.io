@@ -5,59 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How conjecture search works</title>
 <meta name="description" content="How a human–AI conjecture search is organized: the life of a statement, the repository, and how a mathematician can contribute.">
-<style>
-  :root {
-    --bg: #fbfaf7;
-    --fg: #1d2330;
-    --muted: #5b6372;
-    --rule: #e3e0d8;
-    --card: #ffffff;
-    --accent: #c4511a;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #12151c;
-      --fg: #e6e8ec;
-      --muted: #a0a7b4;
-      --rule: #2a2f3a;
-      --card: #191d26;
-      --accent: #f0864a;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--fg);
-    font: 17px/1.6 Georgia, "Iowan Old Style", "Times New Roman", serif;
-  }
-  main { max-width: 44rem; margin: 0 auto; padding: 4rem 1rem 3rem; }
-  h1, h2, h3 { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
-  h1 { font-size: 2.2rem; line-height: 1.15; margin: 0 0 1rem; letter-spacing: -0.01em; }
-  h2 { font-size: 1.1rem; margin: 3rem 0 1rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
-  h3 { font-size: 1.15rem; margin: 0 0 0.4rem; }
-  p { margin: 0 0 1rem; }
-  .lede { font-size: 1.2rem; color: var(--muted); }
-  a { color: var(--accent); text-underline-offset: 3px; }
-  code { font-size: 0.85em; overflow-wrap: anywhere; }
-  .back { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 0.95rem; margin-bottom: 2rem; }
-  ol.steps, ul.plain { padding-left: 1.3rem; }
-  ol.steps li, ul.plain li { margin-bottom: 0.8rem; }
-  .card {
-    background: var(--card);
-    border: 1px solid var(--rule);
-    border-radius: 8px;
-    padding: 1.2rem 1.3rem;
-    margin-bottom: 1rem;
-  }
-  .card p:last-child { margin-bottom: 0; }
-  .note {
-    border-left: 3px solid var(--accent);
-    padding: 0.2rem 0 0.2rem 1rem;
-    color: var(--muted);
-  }
-  footer { border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1.2rem; color: var(--muted); font-size: 0.95rem; }
-</style>
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <main>
@@ -155,7 +103,8 @@
     acceptance is recorded under your name and counts as a certification. If you find a gap,
     a correction is just as valuable.</li>
   </ul>
-  <p>Contributors are credited in the project's history.</p>
+  <p>If you would rather not use GitHub, write to nicolas.brosse [at] ensae.fr. Contributors are credited in the
+  project's history.</p>
 
   <h2>Start your own search</h2>
   <p>The <a href="https://github.com/human-ai-mathematics/conjecture-search-template">conjecture search template</a>
@@ -166,12 +115,6 @@
   <a href="https://github.com/human-ai-mathematics/conjecture-search-template/blob/main/PURPOSE.md"><code>PURPOSE.md</code></a>
   says what it is for and how to judge a change to it.</p>
 
-  <footer>
-    <p>Supported by <a href="https://projectnumina.ai/">Project Numina</a>.</p>
-    <p>Nicolas Brosse works at CREST, ENSAE Paris, Institut Polytechnique de Paris, with
-    Arnak Dalalyan. His work is funded by the European Research Council (ERC) under the European
-    Union's Horizon Europe research and innovation programme (grant agreement No. 101201229).</p>
-  </footer>
 </main>
 </body>
 </html>

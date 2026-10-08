@@ -5,65 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Human–AI Mathematics</title>
 <meta name="description" content="Tools for mathematical research done by humans and AI agents together, where every result can be trusted, read and checked by a mathematician.">
-<style>
-  :root {
-    --bg: #fbfaf7;
-    --fg: #1d2330;
-    --muted: #5b6372;
-    --rule: #e3e0d8;
-    --card: #ffffff;
-    --accent: #c4511a;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #12151c;
-      --fg: #e6e8ec;
-      --muted: #a0a7b4;
-      --rule: #2a2f3a;
-      --card: #191d26;
-      --accent: #f0864a;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--fg);
-    font: 17px/1.6 Georgia, "Iowan Old Style", "Times New Roman", serif;
-  }
-  main { max-width: 44rem; margin: 0 auto; padding: 4rem 1rem 3rem; }
-  h1, h2, h3 { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
-  h1 { font-size: 2.2rem; line-height: 1.15; margin: 0 0 1rem; letter-spacing: -0.01em; }
-  h2 { font-size: 1.1rem; margin: 3rem 0 1rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
-  h3 { font-size: 1.15rem; margin: 0 0 0.4rem; }
-  p { margin: 0 0 1rem; }
-  .lede { font-size: 1.2rem; color: var(--muted); }
-  a { color: var(--accent); text-underline-offset: 3px; }
-  .card {
-    background: var(--card);
-    border: 1px solid var(--rule);
-    border-radius: 8px;
-    padding: 1.2rem 1.3rem;
-    margin-bottom: 1rem;
-  }
-  .card p:last-child { margin-bottom: 0; }
-  .tag {
-    display: inline-block;
-    margin-bottom: 0.5rem;
-    font: 600 0.72rem/1 system-ui, -apple-system, "Segoe UI", sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-  }
-  .tag.live { color: var(--accent); }
-  .note {
-    border-left: 3px solid var(--accent);
-    padding: 0.2rem 0 0.2rem 1rem;
-    color: var(--muted);
-  }
-  ul.team { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
-  footer { border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1.2rem; color: var(--muted); font-size: 0.95rem; }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main>
@@ -83,7 +25,7 @@
   research with AI agents change quickly, and this work will change with them. Feedback is
   welcome: start a <a href="https://github.com/orgs/human-ai-mathematics/discussions">discussion</a>
   or open an <a href="https://github.com/human-ai-mathematics/human-ai-mathematics.github.io/issues">issue</a>
-  on GitHub.</p>
+  on GitHub, or write to nicolas.brosse [at] ensae.fr.</p>
 
   <h2>Why this project</h2>
   <p>We chose the Kannan–Lovász–Simonovits conjecture as a first testbed because it was a famous,
