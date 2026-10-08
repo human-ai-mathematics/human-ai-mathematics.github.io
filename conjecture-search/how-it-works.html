@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How conjecture search works</title>
+<meta name="description" content="How a human–AI conjecture search is organized: the life of a statement, the repository, and how a mathematician can contribute.">
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --fg: #1d2330;
+    --muted: #5b6372;
+    --rule: #e3e0d8;
+    --card: #ffffff;
+    --accent: #c4511a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151c;
+      --fg: #e6e8ec;
+      --muted: #a0a7b4;
+      --rule: #2a2f3a;
+      --card: #191d26;
+      --accent: #f0864a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.6 Georgia, "Iowan Old Style", "Times New Roman", serif;
+  }
+  main { max-width: 44rem; margin: 0 auto; padding: 4rem 1rem 3rem; }
+  h1, h2, h3 { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  h1 { font-size: 2.2rem; line-height: 1.15; margin: 0 0 1rem; letter-spacing: -0.01em; }
+  h2 { font-size: 1.1rem; margin: 3rem 0 1rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+  h3 { font-size: 1.15rem; margin: 0 0 0.4rem; }
+  p { margin: 0 0 1rem; }
+  .lede { font-size: 1.2rem; color: var(--muted); }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  code { font-size: 0.85em; overflow-wrap: anywhere; }
+  .back { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 0.95rem; margin-bottom: 2rem; }
+  ol.steps, ul.plain { padding-left: 1.3rem; }
+  ol.steps li, ul.plain li { margin-bottom: 0.8rem; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 1.2rem 1.3rem;
+    margin-bottom: 1rem;
+  }
+  .card p:last-child { margin-bottom: 0; }
+  .note {
+    border-left: 3px solid var(--accent);
+    padding: 0.2rem 0 0.2rem 1rem;
+    color: var(--muted);
+  }
+  footer { border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1.2rem; color: var(--muted); font-size: 0.95rem; }
+</style>
+</head>
+<body>
+<main>
+  <p class="back"><a href="./">← Conjecture search</a></p>
+
+  <h1>How it works</h1>
+  <p class="lede">The life of a statement, the repository that holds it, and how a
+  mathematician can take part.</p>
+
+  <p>A search is organized around one target statement. It lives in a repository with two
+  faces: a manuscript written for a mathematician, and a research record that keeps the search
+  going across sessions and agents. Agents work in three roles: a <em>researcher</em> who
+  proves, refutes or explores, a <em>reviewer</em> who checks a proof without having seen how
+  it was made, and a <em>writer</em> who improves the prose without changing what is claimed.
+  One file, the <em>ledger</em>, says what is proved, and a status changes only through an
+  independent review or the explicit acceptance of a named person.</p>
+
+  <p class="note">The examples below come from the
+  <a href="../kls-conjecture-search/">KLS manuscript</a>. The rules are those of the
+  <a href="https://github.com/human-ai-mathematics/conjecture-search-template">conjecture search template</a>,
+  which is still changing.</p>
+
+  <h2>The life of a statement</h2>
+  <p>Take the theorem <code>thm:cmh-1d</code>, which computes the exact moment-Hessian constant
+  of a law on the line. Here is everything the project keeps about it.</p>
+
+  <ol class="steps">
+    <li><strong>The statement.</strong> It appears in the manuscript as a labelled theorem, in
+    prose for a reader:
+    <a href="../kls-conjecture-search/cmh-exact-cases">Chapter 17, “The moment map: exact cases”</a>
+    (source:
+    <a href="https://github.com/human-ai-mathematics/kls-conjecture-search/blob/main/modules/17-cmh-exact-cases.md"><code>modules/17-cmh-exact-cases.md</code></a>).
+    The manuscript states and explains; it does not decide whether the statement is proved.</li>
+    <li><strong>The ledger.</strong> One entry in
+    <a href="https://github.com/human-ai-mathematics/kls-conjecture-search/blob/main/research/program/ledger.yaml"><code>research/program/ledger.yaml</code></a>
+    gives its status (<code>proved</code>), what it depends on (the definition
+    <code>def:cmh</code>), and the proof that supports it. This is the only place a status is
+    written.</li>
+    <li><strong>The proof.</strong> A researcher agent wrote the complete argument as a
+    standalone dossier,
+    <a href="https://github.com/human-ai-mathematics/kls-conjecture-search/blob/main/solutions/thm-cmh-dirichlet.md"><code>solutions/thm-cmh-dirichlet.md</code></a>.
+    A proof sketch, a numerical check or an agent's confidence never counts.</li>
+    <li><strong>The review.</strong> A reviewer agent, started in a fresh context without the
+    conversation that produced the proof, checked the dossier against the statement and passed
+    it:
+    <a href="https://github.com/human-ai-mathematics/kls-conjecture-search/blob/main/research/reviews/2026-10-04-cmh-exact-cases-repaired-review.md">the review report</a>.
+    The report records who wrote, who reviewed, and a fingerprint of the exact text examined.
+    If the statement or the proof is later edited, the fingerprint no longer matches and the
+    certification is lifted until a new review.</li>
+    <li><strong>The status on the site.</strong> When the site is built, each statement shows
+    its status read from the ledger, with who certified it and a link to the report. Nobody
+    writes a status by hand, so it cannot go stale.</li>
+  </ol>
+
+  <p>A person can take the reviewer's place: the explicit acceptance of a named mathematician
+  certifies a proof just as a review does, and the site says so. A failed attempt is kept too:
+  the obstacle that stopped a route is recorded, so that the next session does not try it
+  again.</p>
+
+  <h2>The repository</h2>
+  <div class="card">
+    <h3>The manuscript</h3>
+    <p><code>modules/</code> holds the text a reader reads, one chapter per file, every claim a
+    labelled statement. <code>solutions/</code> holds the full proofs, one dossier each.</p>
+  </div>
+  <div class="card">
+    <h3>The research record</h3>
+    <p><code>research/program/</code> holds the ledger, the brief that states the problem and
+    its traps, and the portfolio of routes under way. <code>explorations/</code> holds dated
+    checkpoints, <code>reviews/</code> the review reports, <code>runs/</code> computations and
+    their output. Nothing in it is rewritten; it is how a new session resumes the search.</p>
+  </div>
+  <div class="card">
+    <h3>The harness</h3>
+    <p><code>.claude/agents/</code> and <code>.codex/agents/</code> define the three roles;
+    <code>templates/</code> holds an empty copy of each kind of file; <code>scripts/check.py</code>
+    checks that the manuscript, the ledger and the reviews agree. It checks structure only:
+    whether a proof is right is decided by a reader.</p>
+  </div>
+  <p>The KLS repository also keeps <a href="https://github.com/human-ai-mathematics/kls-conjecture-search/blob/main/HISTORY.md"><code>HISTORY.md</code></a>,
+  the milestones of the search, newest first.</p>
+
+  <h2>How to contribute</h2>
+  <p>You do not need to know any of the above. Everything goes through GitHub.</p>
+  <ul class="plain">
+    <li><strong>On a statement.</strong> Next to each statement on the site, after its status,
+    are its label and one or two links. They open a short form with the label already filled
+    in: <em>Idea</em> or <em>Counterexample</em> on an open statement, <em>Correction</em> on any
+    other.</li>
+    <li><strong>A question or a thought.</strong> The
+    <a href="https://github.com/human-ai-mathematics/kls-conjecture-search/discussions">Discussions</a>
+    of each project are for questions, ideas and references. Nothing has to be finished to be
+    worth saying there.</li>
+    <li><strong>Checking a proof.</strong> If you read a proof and find it correct, say so: your
+    acceptance is recorded under your name and counts as a certification. If you find a gap,
+    a correction is just as valuable.</li>
+  </ul>
+  <p>Contributors are credited in the project's history.</p>
+
+  <h2>Start your own search</h2>
+  <p>The <a href="https://github.com/human-ai-mathematics/conjecture-search-template">conjecture search template</a>
+  holds the harness with no mathematics in it, and a
+  <a href="https://github.com/human-ai-mathematics/conjecture-search-template/blob/main/example/README.md">complete worked example</a>.
+  Its <a href="https://github.com/human-ai-mathematics/conjecture-search-template/blob/main/README.md">README</a>
+  walks through starting a new search, and
+  <a href="https://github.com/human-ai-mathematics/conjecture-search-template/blob/main/PURPOSE.md"><code>PURPOSE.md</code></a>
+  says what it is for and how to judge a change to it.</p>
+
+  <footer>
+    <p>Supported by <a href="https://projectnumina.ai/">Project Numina</a>.</p>
+    <p>Nicolas Brosse works at CREST, ENSAE Paris, Institut Polytechnique de Paris, with
+    Arnak Dalalyan. His work is funded by the European Research Council (ERC) under the European
+    Union's Horizon Europe research and innovation programme (grant agreement No. 101201229).</p>
+  </footer>
+</main>
+</body>
+</html>

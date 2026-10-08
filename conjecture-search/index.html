@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conjecture search</title>
+<meta name="description" content="A sustained human–AI search to prove or refute one hard statement, with every status certified: principles, the KLS manuscript, the template, and what comes next.">
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --fg: #1d2330;
+    --muted: #5b6372;
+    --rule: #e3e0d8;
+    --card: #ffffff;
+    --accent: #c4511a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151c;
+      --fg: #e6e8ec;
+      --muted: #a0a7b4;
+      --rule: #2a2f3a;
+      --card: #191d26;
+      --accent: #f0864a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.6 Georgia, "Iowan Old Style", "Times New Roman", serif;
+  }
+  main { max-width: 44rem; margin: 0 auto; padding: 4rem 1rem 3rem; }
+  h1, h2, h3 { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  h1 { font-size: 2.2rem; line-height: 1.15; margin: 0 0 1rem; letter-spacing: -0.01em; }
+  h2 { font-size: 1.1rem; margin: 3rem 0 1rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+  h3 { font-size: 1.15rem; margin: 0 0 0.4rem; }
+  p { margin: 0 0 1rem; }
+  .lede { font-size: 1.2rem; color: var(--muted); }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  .back { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 0.95rem; margin-bottom: 2rem; }
+  ol.aims { padding-left: 1.3rem; }
+  ol.aims li { margin-bottom: 0.6rem; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 1.2rem 1.3rem;
+    margin-bottom: 1rem;
+  }
+  .card p:last-child { margin-bottom: 0; }
+  footer { border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1.2rem; color: var(--muted); font-size: 0.95rem; }
+</style>
+</head>
+<body>
+<main>
+  <p class="back"><a href="../">← Human–AI Mathematics</a></p>
+
+  <h1>Conjecture search</h1>
+  <p class="lede">A sustained search, by humans and AI agents, to prove or refute one hard
+  statement, in which every result can be trusted.</p>
+
+  <p>On a hard question, agents produce proof attempts, reductions, numerical experiments and
+  candidate counterexamples, over many sessions. Without structure, what was learned is lost
+  between sessions, dead ends are explored again, and a convincing argument passes for a proof.
+  Conjecture search gives that work one shared record, and a manuscript a mathematician can
+  read and check.</p>
+
+  <h2>Principles</h2>
+  <ol class="aims">
+    <li><strong>Organize the search.</strong> One target statement, a portfolio of routes and dated
+    checkpoints, so that many agents over many sessions work as one search.</li>
+    <li><strong>Make every status trustworthy.</strong> A claim is proved or refuted only through a
+    certification tied to the exact text examined: an independent review, or the explicit
+    acceptance of a named person. Evidence guides the search; it never moves a status.</li>
+    <li><strong>Open the research to mathematicians.</strong> The output reads like a paper, says
+    what is settled and what is not, and shows where a reader can help.</li>
+    <li><strong>Spend sparingly.</strong> Agent calls are the search's budget, and each one is
+    launched for a result that needs it.</li>
+  </ol>
+  <p>How the pieces fit together, from the life of a statement to the ways to contribute:
+  <a href="how-it-works.html"><strong>How it works</strong></a>.</p>
+
+  <h2>Projects</h2>
+
+  <div class="card">
+    <h3><a href="../kls-conjecture-search/">The Kannan–Lovász–Simonovits frontier</a></h3>
+    <p>A manuscript on the KLS conjecture, now a theorem: a complete account of the three recent
+    proofs, a comparison of them, and alternative mechanisms for the dimension-free Poincaré bound,
+    produced by a sustained human–AI search. Each statement shows who checked it. Begun as a
+    search for a proof, it has become a consolidation of the field around the theorem.</p>
+  </div>
+
+  <div class="card">
+    <h3><a href="https://github.com/human-ai-mathematics/conjecture-search-template">Conjecture search template</a></h3>
+    <p>The reusable research harness behind the KLS manuscript, with no mathematics in it: a
+    MyST manuscript, a ledger of claims and their certifications, and researcher, reviewer and
+    writer agents. Start a new search from it.</p>
+  </div>
+
+  <h2>What's next</h2>
+  <p>KLS was proved while we were working on it, so the template has not yet been tested from
+  start to finish on a question that stays open. That is our next step: run it on an open
+  conjecture, not yet chosen, and learn whether it is pleasant for mathematicians to read,
+  check and contribute to, whether it is efficient for what it costs, and how it should change.
+  If you have a conjecture to propose, or would like to take part, say so in the
+  <a href="https://github.com/orgs/human-ai-mathematics/discussions">discussions</a>.</p>
+
+  <footer>
+    <p>Supported by <a href="https://projectnumina.ai/">Project Numina</a>.</p>
+    <p>Nicolas Brosse works at CREST, ENSAE Paris, Institut Polytechnique de Paris, with
+    Arnak Dalalyan. His work is funded by the European Research Council (ERC) under the European
+    Union's Horizon Europe research and innovation programme (grant agreement No. 101201229).</p>
+  </footer>
+</main>
+</body>
+</html>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Human–AI Mathematics</title>
-<meta name="description" content="Mathematical research done by humans and AI agents together, where every result is checked and certified.">
+<meta name="description" content="Tools for mathematical research done by humans and AI agents together, where every result can be trusted, read and checked by a mathematician.">
 <style>
   :root {
     --bg: #fbfaf7;
@@ -39,8 +39,6 @@
   p { margin: 0 0 1rem; }
   .lede { font-size: 1.2rem; color: var(--muted); }
   a { color: var(--accent); text-underline-offset: 3px; }
-  ol.aims { padding-left: 1.3rem; }
-  ol.aims li { margin-bottom: 0.6rem; }
   .card {
     background: var(--card);
     border: 1px solid var(--rule);
@@ -49,6 +47,15 @@
     margin-bottom: 1rem;
   }
   .card p:last-child { margin-bottom: 0; }
+  .tag {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font: 600 0.72rem/1 system-ui, -apple-system, "Segoe UI", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+  }
+  .tag.live { color: var(--accent); }
   .note {
     border-left: 3px solid var(--accent);
     padding: 0.2rem 0 0.2rem 1rem;
@@ -61,49 +68,56 @@
 <body>
 <main>
   <h1>Human–AI Mathematics</h1>
-  <p class="lede">Mathematical research done by humans and AI agents together, organized so that
-  every result can be trusted, read and checked by a mathematician.</p>
+  <p class="lede">Tools for mathematical research done by humans and AI agents together, so that
+  what they produce can be trusted, read and checked by a mathematician.</p>
 
-  <p>AI agents can now produce a large volume of mathematical work on a hard question: proof
-  attempts, reductions, numerical experiments, candidate counterexamples. Left unstructured, that
-  volume works against the research. What was learned is lost between sessions, a plausible
-  argument is mistaken for a result, and a mathematician facing the output cannot tell what is
-  proved and what is open. This project builds the structure and the tools that prevent this,
-  and tests them on real questions.</p>
+  <p>AI agents can now take part in mathematical research: they attempt proofs, run
+  experiments, read the literature and write. Their output is large, and left unstructured it
+  works against the research: what was learned is lost, a plausible argument is mistaken for a
+  result, and a mathematician cannot tell what is established. Mathematicians also do many
+  kinds of work — proving or refuting a statement, understanding a field, putting what is known
+  in order — and each calls for tools of its own. This project builds such tools, one task at a
+  time, and tests them on real questions.</p>
 
-  <p class="note">What follows is a proposal, not a finished method. The tools and the practice
-  of research with AI agents change quickly, and this framework will change with them.
-  Feedback is welcome: start a <a href="https://github.com/orgs/human-ai-mathematics/discussions">discussion</a>
+  <p class="note">This is a proposal, not a finished method. The tools and the practice of
+  research with AI agents change quickly, and this work will change with them. Feedback is
+  welcome: start a <a href="https://github.com/orgs/human-ai-mathematics/discussions">discussion</a>
   or open an <a href="https://github.com/human-ai-mathematics/human-ai-mathematics.github.io/issues">issue</a>
   on GitHub.</p>
 
-  <h2>Principles</h2>
-  <ol class="aims">
-    <li><strong>Organize the search.</strong> One target statement, a portfolio of routes and dated
-    checkpoints, so that many agents over many sessions work as one search.</li>
-    <li><strong>Make every status trustworthy.</strong> A claim is proved or refuted only through a
-    certification tied to the exact text examined: an independent review, or the explicit
-    acceptance of a named person. Evidence guides the search; it never moves a status.</li>
-    <li><strong>Open the research to mathematicians.</strong> The output reads like a paper, says
-    what is settled and what is not, and shows where a reader can help.</li>
-    <li><strong>Spend sparingly.</strong> Agent calls are the search's budget, and each one is
-    launched for a result that needs it.</li>
-  </ol>
+  <h2>Why this project</h2>
+  <p>We chose the Kannan–Lovász–Simonovits conjecture as a first testbed because it was a famous,
+  well-posed open question, one with which some of us had a passing familiarity. In October 2026
+  it was proved, three times: three teams, each working with frontier AI models, reached
+  independent proofs within days of one another.</p>
 
-  <h2>Projects</h2>
+  <p>The problem was solved, and that is good news. But the effort was spent three times over,
+  and almost none of it was shared along the way: which routes each team tried, which obstacles
+  stopped them, which ideas they set aside. When results are judged by priority and a search
+  leaves no common record, duplication is what one should expect, even when everyone does
+  excellent work.</p>
+
+  <p>We think research with AI calls for other forms of collaboration: a shared, public record
+  of the work, where an obstacle found once is not rediscovered and progress is pooled rather
+  than raced. This project is our attempt at one.</p>
+
+  <h2>Tools, by task</h2>
 
   <div class="card">
-    <h3><a href="kls-conjecture-search/">The Kannan–Lovász–Simonovits frontier</a></h3>
-    <p>A manuscript on the KLS conjecture, now a theorem: a complete account of the three recent
-    proofs, a comparison of them, and alternative mechanisms for the dimension-free Poincaré bound,
-    produced by a sustained human–AI search. Each statement shows who checked it.</p>
+    <span class="tag live">Available</span>
+    <h3><a href="conjecture-search/">Conjecture search</a></h3>
+    <p>Prove or refute one hard statement, over many sessions and many agents, with every status
+    certified by an independent review or a named person. Its principles, the KLS manuscript it
+    produced, and the template to start a new search.</p>
   </div>
 
   <div class="card">
-    <h3><a href="https://github.com/human-ai-mathematics/conjecture-search-template">Conjecture search template</a></h3>
-    <p>The reusable research harness behind the KLS manuscript, with no mathematics in it: a
-    MyST manuscript, a ledger of claims and their certifications, and researcher, reviewer and
-    writer agents. Start a new search from it.</p>
+    <span class="tag">Being explored</span>
+    <h3>Mathematical mapping</h3>
+    <p>Map a field and consolidate what is known into an account that can be trusted and read:
+    which results hold, how they connect, what remains open. A direction we intend to explore,
+    not yet a project; the <a href="kls-conjecture-search/">KLS manuscript</a>, which became a
+    consolidation of the field around the theorem, gives a first idea of it.</p>
   </div>
 
   <h2>Team</h2>
@@ -115,6 +129,9 @@
 
   <footer>
     <p>Supported by <a href="https://projectnumina.ai/">Project Numina</a>.</p>
+    <p>Nicolas Brosse works at CREST, ENSAE Paris, Institut Polytechnique de Paris, with
+    Arnak Dalalyan. His work is funded by the European Research Council (ERC) under the European
+    Union's Horizon Europe research and innovation programme (grant agreement No. 101201229).</p>
   </footer>
 </main>
 </body>
