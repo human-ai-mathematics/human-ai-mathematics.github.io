@@ -70,3 +70,14 @@ ol.steps li, ul.plain li { margin-bottom: 0.8rem; }
 
 ul.team { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
 footer { border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1.2rem; color: var(--muted); font-size: 0.95rem; }
+
+/* A section's sub-heading, in a long page (outside a card). */
+main > h3 { margin-top: 2rem; }
+
+/* A table; on a narrow screen it scrolls inside its wrapper, not the page. */
+.table-wrap { overflow-x: auto; margin: 0 0 1.5rem; }
+table { width: 100%; min-width: 34rem; border-collapse: collapse; font-size: 0.9rem; line-height: 1.45; }
+th, td { padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; }
+th { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-weight: 600; color: var(--muted); border-bottom-width: 2px; }
+th:first-child, td:first-child { padding-left: 0; }
+td code { overflow-wrap: normal; }
