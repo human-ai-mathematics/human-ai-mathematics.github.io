@@ -12,8 +12,9 @@
   <p class="back"><a href="../">← Human–AI Mathematics</a></p>
 
   <h1>Conjecture search</h1>
-  <p class="lede">A sustained search, by humans and AI agents, to prove or refute one hard
-  statement, in which every result can be trusted.</p>
+  <p class="lede">Our modest proposal for one part of the
+  <a href="../landscape/">landscape</a>: a sustained search, by humans and AI agents, to prove
+  or refute one hard statement, in which every result can be trusted.</p>
 
   <p>On a hard question, agents produce proof attempts, reductions, numerical experiments and
   candidate counterexamples, over many sessions. Without structure, what was learned is lost
@@ -35,6 +36,61 @@
   </ol>
   <p>How the pieces fit together, from the life of a statement to the ways to contribute:
   <a href="how-it-works.html"><strong>How it works</strong></a>.</p>
+
+  <h2>In the landscape</h2>
+  <p>Conjecture search serves one function of the <a href="../landscape/">landscape</a>: the
+  record of the work, kept alongside a manuscript and a certification of every status. For one
+  hard statement studied over many sessions and agents, it keeps:</p>
+  <ul class="plain">
+    <li><strong>a record of the work:</strong> the portfolio of routes, dated checkpoints,
+    obstacles, and refutations counted as results;</li>
+    <li><strong>informal certification:</strong> every status is earned by an independent review
+    or a named person, tied to a fingerprint of the exact text examined, and reviews are
+    append-only;</li>
+    <li><strong>a manuscript for readers:</strong> every claim a labelled statement;</li>
+    <li><strong>a bridge to formal evidence:</strong> a Lean repository alongside.</li>
+  </ul>
+
+  <p><strong>We are not alone.</strong> Several projects created in 2026 also record the routes
+  and dead ends of a search driven by AI agents: among them
+  <a href="https://github.com/canghaimeng/Euler">Euler</a>,
+  <a href="https://github.com/Joe975/math-lab">Math Lab</a>,
+  <a href="https://github.com/nasqret/labyrinth-exploration">labyrinth-exploration</a>,
+  <a href="https://github.com/wcook04/plectis-erdos">Plectis</a> and
+  <a href="https://github.com/kaminocorp/opentheory">OpenTheory</a>; the
+  <a href="https://github.com/haruhisa-enomoto/math-research-harness">math-research-harness</a>
+  is a repository template close to ours; DeepMind's
+  <a href="https://arxiv.org/abs/2605.06651">AI co-mathematician</a> tracks failed hypotheses
+  in a closed system. They are compared on the
+  <a href="../landscape/#process-records">landscape page</a>. What we did not find elsewhere
+  is the combination: a manuscript written for readers as the home of the statements, a ledger
+  in which a refutation is a result, and certification by an independent review or a named
+  person, on a single statement studied in depth.</p>
+
+  <p><strong>What it lacks</strong>, measured against the rest of the landscape:</p>
+  <ul class="plain">
+    <li>human certification: so far its proofs are certified by agent reviews only, which every
+    venue treats as the weakest signal;</li>
+    <li>an export of its ledger and portfolio in a documented format, so that other projects can
+    read them;</li>
+    <li>the shared formal conventions: the <code>formalization.yaml</code> provenance file and
+    the layout used by the <a href="https://palomar-registry.org/">Palomar</a> registry, in its
+    Lean repository;</li>
+    <li>a mapping of its statuses onto the certification ladders others use;</li>
+    <li>provenance recorded per claim, and a record of what each agent saw before it worked (an
+    agent that has read earlier failures is not an independent check);</li>
+    <li>packaging as an agent skill, and a place to deposit its records of the search.</li>
+  </ul>
+
+  <p><strong>How it could plug in.</strong> Statements could take their identity from
+  <a href="https://github.com/google-deepmind/formal-conjectures">Formal Conjectures</a> or
+  Wikidata; formal results could go to Palomar; manuscripts to
+  <a href="https://hexagonmath.org/">Hexagon</a> or arXiv; verification of an exact version to
+  <a href="https://www.proofforum.org/">ProofForum</a>; exposition to venues such as
+  <a href="https://www.mathematicaldiscourse.org/">Mathematical Discourse</a>. The template
+  would keep the part none of them holds: the record of the search. Its ledger is also close
+  to the shared records that the landscape page proposes for a federation of tools, so it
+  could serve as one test of them.</p>
 
   <h2>Projects</h2>
 
