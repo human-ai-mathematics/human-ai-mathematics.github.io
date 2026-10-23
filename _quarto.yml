@@ -1,0 +1,19 @@
+project:
+  type: website
+  output-dir: _site
+  render: ["*.qmd", "**/*.qmd"]
+  resources: [figures/*.svg]
+
+website:
+  title: "Human–AI Mathematics"
+
+format:
+  html:
+    from: markdown-smart
+    minimal: true
+    tbl-cap-location: bottom
+    css: /style.css
+    section-divs: false
+    smooth-scroll: false
+    anchor-sections: false
+    lang: en

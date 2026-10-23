@@ -1,0 +1,72 @@
+---
+pagetitle: "How conjecture search works"
+description: "How a human–AI conjecture search is organized: the life of a statement, the repository, and how a mathematician can contribute."
+---
+
+::: back
+[← Conjecture search](./)
+:::
+
+# How it works
+
+::: lede
+The life of a statement, the repository that holds it, and how a mathematician can take part.
+:::
+
+A search is organized around one target statement. It lives in a repository with two faces: a manuscript written for a mathematician, and a research record that keeps the search going across sessions and agents. Agents work in three roles: a *researcher* who proves, refutes or explores, a *reviewer* who checks a proof without having seen how it was made, and a *writer* who improves the prose without changing what is claimed. One file, the *ledger*, says what is proved, and a status changes only through an independent review or the explicit acceptance of a named person.
+
+::: note
+The examples below come from the [KLS manuscript](../kls-conjecture-search/). The rules are those of the [conjecture search template](https://github.com/human-ai-mathematics/conjecture-search-template), which is still changing.
+:::
+
+## The life of a statement
+
+Take the theorem `thm:cmh-1d`, which computes the exact moment-Hessian constant of a law on the line. Here is everything the project keeps about it.
+
+::: steps
+1.  **The statement.** It appears in the manuscript as a labelled theorem, in prose for a reader: [Chapter 17, “The moment map: exact cases”](../kls-conjecture-search/cmh-exact-cases) (source: [`modules/17-cmh-exact-cases.md`](https://github.com/human-ai-mathematics/kls-conjecture-search/blob/main/modules/17-cmh-exact-cases.md)). The manuscript states and explains; it does not decide whether the statement is proved.
+2.  **The ledger.** One entry in [`research/program/ledger.yaml`](https://github.com/human-ai-mathematics/kls-conjecture-search/blob/main/research/program/ledger.yaml) gives its status (`proved`), what it depends on (the definition `def:cmh`), and the proof that supports it. This is the only place a status is written.
+3.  **The proof.** A researcher agent wrote the complete argument as a standalone dossier, [`solutions/thm-cmh-dirichlet.md`](https://github.com/human-ai-mathematics/kls-conjecture-search/blob/main/solutions/thm-cmh-dirichlet.md). A proof sketch, a numerical check or an agent's confidence never counts.
+4.  **The review.** A reviewer agent, started in a fresh context without the conversation that produced the proof, checked the dossier against the statement and passed it: [the review report](https://github.com/human-ai-mathematics/kls-conjecture-search/blob/main/research/reviews/2026-10-04-cmh-exact-cases-repaired-review.md). The report records who wrote, who reviewed, and a fingerprint of the exact text examined. If the statement or the proof is later edited, the fingerprint no longer matches and the certification is lifted until a new review.
+5.  **The status on the site.** When the site is built, each statement shows its status read from the ledger, with who certified it and a link to the report. Nobody writes a status by hand, so it cannot go stale.
+:::
+
+A person can take the reviewer's place: the explicit acceptance of a named mathematician certifies a proof just as a review does, and the site says so. A failed attempt is kept too: the obstacle that stopped a route is recorded, so that the next session does not try it again.
+
+## The repository
+
+::: card
+### The manuscript
+
+`modules/` holds the text a reader reads, one chapter per file, every claim a labelled statement. `solutions/` holds the full proofs, one dossier each.
+:::
+
+::: card
+### The research record
+
+`research/program/` holds the ledger, the brief that states the problem and its traps, and the portfolio of routes under way. `explorations/` holds dated checkpoints, `reviews/` the review reports, `runs/` computations and their output. Nothing in it is rewritten; it is how a new session resumes the search.
+:::
+
+::: card
+### The harness
+
+`.claude/agents/` and `.codex/agents/` define the three roles; `templates/` holds an empty copy of each kind of file; `scripts/check.py` checks that the manuscript, the ledger and the reviews agree. It checks structure only: whether a proof is right is decided by a reader.
+:::
+
+The KLS repository also keeps [`HISTORY.md`](https://github.com/human-ai-mathematics/kls-conjecture-search/blob/main/HISTORY.md), the milestones of the search, newest first.
+
+## How to contribute
+
+You do not need to know any of the above. Everything goes through GitHub.
+
+::: plain
+- **On a statement.** Next to each statement on the site, after its status, are its label and one or two links. They open a short form with the label already filled in: *Idea* or *Counterexample* on an open statement, *Correction* on any other.
+- **A question or a thought.** The [Discussions](https://github.com/human-ai-mathematics/kls-conjecture-search/discussions) of each project are for questions, ideas and references. Nothing has to be finished to be worth saying there.
+- **Checking a proof.** If you read a proof and find it correct, say so: your acceptance is recorded under your name and counts as a certification. If you find a gap, a correction is just as valuable.
+:::
+
+If you would rather not use GitHub, write to nicolas.brosse \[at\] ensae.fr. Contributors are credited in the project's history.
+
+## Start your own search
+
+The [conjecture search template](https://github.com/human-ai-mathematics/conjecture-search-template) holds the harness with no mathematics in it, and a [complete worked example](https://github.com/human-ai-mathematics/conjecture-search-template/blob/main/example/README.md). Its [README](https://github.com/human-ai-mathematics/conjecture-search-template/blob/main/README.md) walks through starting a new search, and [`PURPOSE.md`](https://github.com/human-ai-mathematics/conjecture-search-template/blob/main/PURPOSE.md) says what it is for and how to judge a change to it.
