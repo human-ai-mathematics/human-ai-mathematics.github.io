@@ -1,7 +1,7 @@
 project:
   type: website
   output-dir: _site
-  render: ["*.qmd", "**/*.qmd"]
+  render: ["*.qmd", "**/*.qmd", "!drafts/"]
   resources: [figures/*.svg]
 
 website:
@@ -17,3 +17,6 @@ format:
     smooth-scroll: false
     anchor-sections: false
     lang: en
+
+crossref:
+  subref-labels: alpha A

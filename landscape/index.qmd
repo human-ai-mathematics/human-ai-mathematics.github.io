@@ -66,7 +66,7 @@ This page starts from a question: what would such a shared infrastructure have t
 
 A shared infrastructure has to answer five questions, from the raw material to what a reader sees. We read the landscape as five layers, with two concerns that cut across all of them. This is a grid for reading what exists, not a structure to impose.
 
-<!-- figure: layers -->
+![Five layers, from sources (bottom) to what a reader sees (top), and two concerns that run through all of them. The state of each layer is our assessment ([§ 2](#coverage)); the work layer, outlined, is the newest.](../figures/layers.svg){#fig-layers fig-alt="A stack of five boxes. From bottom to top: 1, sources and objects, well served; 2, statements and identity, partial; 3, work, young and fragmented, outlined; 4, evidence, uneven; 5, views and venues, emerging. Beside the stack, two tall boxes: provenance, and governance."}
 
 ::: steps
 1.  **Sources and objects.** An agent that does not know what has been proved, refuted or asked wastes its time, or presents an old result as new. Problem lists, bibliographies and databases of objects are plentiful, but scattered: the same Erdős problem appears in eight registries, each with its own identifier ([§ 3.1](#sources-problems)).
@@ -102,7 +102,7 @@ So "verified" covers four signals. A proof can have a named human referee and no
 
 Follow one result. The problem sits in a registry. Agents work on it and record their attempts. The proof is formalized in Lean and registered on Palomar. A write-up is deposited on Hexagon or reviewed on ProofForum. Each system can do its own job well; little connects them.
 
-<!-- figure: flow -->
+![The path of one result through four kinds of system, with their real identifier formats. Dashed: no shared identifier or format between the two. Solid: a link already in place; erdosproblems.com and Formal Conjectures point to Palomar IDs, bypassing any process record. The identifiers are listed in [§ 4](#interoperability).](../figures/flow.svg){#fig-flow fig-alt="Four boxes from top to bottom: problem registry, process record, formal proof, deposit and review, joined by dashed arrows. A solid arrow labelled Palomar IDs goes from the problem registry straight to the formal proof."}
 
 Some conventions already connect systems and can be adopted as they stand ([§ 4](#interoperability)): [`formalization.yaml`](#glossary-formalization-yaml) carries provenance and review status, `Challenge.lean` with Comparator pins the trusted statement, Palomar IDs pin a formal result, and Wikidata [QIDs](#glossary-qid) and Stacks tags identify concepts. Two things are missing:
 
@@ -128,7 +128,15 @@ These states are our assessment of the survey, not grades given to projects; the
 
 ## Three ways to organize it {#in-brief-architectures}
 
-<!-- figure: architectures -->
+::: {#fig-architectures layout-ncol="3"}
+![**One platform.** For: one interface, coherent identifiers. Against: one operator holds the records and competes with trusted registries.](../figures/arch-a.svg){#fig-arch-a fig-alt="Four systems all connected to one central box."}
+
+![**A federation, our choice.** For: builds on what works, no single owner. Against: needs agreement on formats; nobody is in charge of coherence.](../figures/arch-b.svg){#fig-arch-b fig-alt="Five systems linked directly to one another, with no centre."}
+
+![**A new registry.** For: gives process records a home and a citation. Against: a new institution to fund and govern, before formats exist.](../figures/arch-c.svg){#fig-arch-c fig-alt="Three linked systems, and a new box joined to them by dashed lines."}
+
+Three ways to organize the whole: one platform that holds everything, existing systems that exchange shared records, or a new registry added for informal research records.
+:::
 
 We favour B first, because it is cheap and reversible, builds on what works (`formalization.yaml`, Comparator, Palomar, Hexagon), and its formats would be needed by A or C anyway. It standardizes four records, kept as files under version control and pointing to each other by stable identifiers:
 

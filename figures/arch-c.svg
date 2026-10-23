@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 70" width="120" height="70" fill="none" stroke="#1d2330" stroke-width="2"><style>circle,rect{fill:#fff}.acc{stroke:#c4511a}</style>
+<path d="M15 20 45 12 30 52 15 20"/>
+<path class="acc" stroke-dasharray="4 3" d="M45 12 82 32M30 52 82 40"/>
+<circle cx="15" cy="20" r="6"/><circle cx="45" cy="12" r="6"/><circle cx="30" cy="52" r="6"/>
+<rect class="acc" x="82" y="22" width="28" height="26" rx="3"/>
+</svg>

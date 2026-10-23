@@ -1,0 +1,19 @@
+# Figure 3: one result across four kinds of system.
+# Dashed accent: no shared identifier or format. Solid: a link already in place.
+vars: {d2-config: {pad: 4; layout-engine: elk; theme-overrides: {N7: "#fbfaf7"}}}
+direction: down
+classes: {
+  system: {
+    width: 300
+    style: {fill: "#ffffff"; stroke: "#e3e0d8"; font-color: "#1d2330"; border-radius: 6; bold: false; font-size: 15}
+  }
+  missing: {style: {stroke: "#c4511a"; stroke-dash: 4; stroke-width: 2}}
+}
+registry: "Problem registry\n\nErdős number, Formal Conjectures name,\nWikidata QID" {class: system}
+process: "Process record\n\nEuler, Math Lab, Plectis…,\neach in its own format" {class: system}
+formal: "Formal proof\n\nChallenge.lean + Comparator;\nPALOMAR-…-vN" {class: system}
+deposit: "Deposit and review\n\nhexagon:YYMM.NNNNNvN,\nPF:YYYY.NNNNNN/vN/THM-x" {class: system}
+registry -> process: {class: missing}
+process -> formal: {class: missing}
+formal -> deposit: {class: missing}
+registry -> formal: "Palomar IDs" {style: {stroke: "#1d2330"; stroke-width: 2; font-color: "#5b6372"; italic: false; font-size: 14}}
