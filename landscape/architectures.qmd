@@ -1,0 +1,70 @@
+---
+title: "Connecting the landscape: three architectures"
+subtitle: "A proposal for linking mathematical infrastructure through shared records."
+description: "Three options for connecting the mathematics-with-AI landscape: an integrated platform, a federation, or a registry for research records."
+body-classes: landscape-page
+toc-depth: 2
+---
+
+The [five-layer landscape](index.qmd) describes existing tools and the gaps between them, based on a survey dated 21 October 2026. This page asks how those components could work together. The options and recommendation below are proposals, separate from the survey's observations.
+
+## A. One integrated platform
+
+![Systems connected to one central platform.](../figures/arch-a.svg){#fig-arch-a fig-alt="Systems connected to one central platform."}
+
+A single service holds problems, statements, work, evidence and views (the direction of Prove2Me on the formal side, or Euler on the research side).
+
+::: plain
+- *For*: coherent identifiers, one interface, easy to use.
+- *Against*: one operator holds the records and the logs; it competes with registries, libraries and venues that the community already trusts; its governance must address this concentration of responsibility (see [governance in the landscape](index.qmd#governance)).
+:::
+
+## B. A federation linked by shared records
+
+![Existing systems exchanging shared records without a central platform.](../figures/arch-b.svg){#fig-arch-b fig-alt="Existing systems exchanging shared records without a central platform."}
+
+Existing components stay where they are. What is standardized is a **small set of records** that every component can emit and read, kept as files under version control and pointing to each other by stable identifiers:
+
+::: steps
+1.  a **statement record**: canonical informal statement, with its crosswalk (QID, Formal Conjectures name, Lean name and `semantic_hash`, Palomar ID);
+2.  an **evidence record**: the question checked and the kind of evidence ([evidence in the landscape](index.qmd#formal-certification)), by whom or what, on which fingerprinted version, with which independence (what the checker saw);
+3.  a **process record**: route, obstacle, refutation, abandonment, with reasons;
+4.  a **provenance record**: model, role, human steering, pointer to the run log.
+:::
+
+::: plain
+- *For*: builds on what works (`formalization.yaml`, Comparator, Palomar, Hexagon); no single owner; portable records can be preserved independently of their host, provided copies are maintained.
+- *Against*: needs agreement on formats; adoption is slow; nobody is in charge of coherence.
+:::
+
+## C. A registry for informal research records
+
+![Existing systems connected to an additional research-record registry.](../figures/arch-c.svg){#fig-arch-c fig-alt="Existing systems connected to an additional research-record registry."}
+
+The informal counterpart of Palomar: versioned, citable entries for process records and informal evidence, with moderation.
+
+::: plain
+- *For*: gives process records a home and a citation (see [research records](index.qmd#process-records)).
+- *Against*: a new institution to fund and govern; premature before formats exist.
+:::
+
+## Recommendation and first steps
+
+We favour starting with B: agreeing on shared records can proceed incrementally, and those formats would also be needed by A or C. This is a proposed direction, not an established interoperability standard. Possible first steps:
+
+::: plain
+- a `process:` extension (routes, obstacles, refutations) to `formalization.yaml`, whose schema tolerates unknown keys;
+- a comparison of the formats already used by Euler, Math Lab, labyrinth-exploration, OpenTheory and the Portolan schema, before any new one is written;
+- a mapping between the existing certification ladders (`review.status`, VibeMathed, ProofForum, Hexagon).
+:::
+
+## Open questions
+
+::: plain
+- Who should own a process-record format: the Mathlib Initiative (owner of `formalization.yaml`), a working group (Isaac Newton Institute 2027, Simons institutes), or the projects that record process today?
+- How should independence be recorded so that agreement between agents means something?
+- How can agent reviews be calibrated against later human review, and which limitations will remain?
+- Should process records be public by default, given that they reveal routes before results?
+:::
+
+[Return to the landscape](index.qmd#connections).

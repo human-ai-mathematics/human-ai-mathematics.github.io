@@ -120,3 +120,42 @@ figcaption { color: $muted; font: 0.85rem/1.4 $sans; }
 
 .glossary dt { font-family: $sans; font-weight: 600; }
 .glossary dd { margin: 0 0 0.9rem; }
+
+// The landscape uses layers as its main reading structure.
+body.landscape-page {
+  #quarto-content main h2,
+  #quarto-content main section:first-of-type h2:first-of-type {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    text-transform: none;
+    letter-spacing: normal;
+    color: $body-color;
+    border-top: 1px solid $rule;
+    padding-top: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  main h3 { margin-top: 1.8rem; }
+  main .finding { margin: 1.7rem 0 0; }
+
+  main details {
+    margin: 0.8rem 0 1.5rem;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid $rule;
+    border-radius: 6px;
+    font-size: 0.94rem;
+
+    summary {
+      font-family: $sans;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    summary:focus-visible { outline: 2px solid $accent; outline-offset: 4px; }
+    &[open] > summary { margin-bottom: 1rem; }
+    > :last-child { margin-bottom: 0; }
+  }
+
+  #fig-layers img { width: 100%; max-width: 27rem; }
+  #fig-arch-a img, #fig-arch-b img, #fig-arch-c img { max-width: 22rem; }
+}
