@@ -6,16 +6,33 @@ project:
 
 website:
   title: "Human–AI Mathematics"
+  navbar:
+    left:
+      - text: Landscape
+        href: landscape/index.qmd
+      - text: Conjecture search
+        menu:
+          - text: Overview
+            href: conjecture-search/index.qmd
+          - text: How it works
+            href: conjecture-search/how-it-works.qmd
+  page-footer:
+    center: |
+      Supported by [Project Numina](https://projectnumina.ai/). Contact: nicolas.brosse [at] ensae.fr.
+
+      Nicolas Brosse works at CREST, ENSAE Paris, Institut Polytechnique de Paris, with Arnak Dalalyan. His work is funded by the European Research Council (ERC) under the European Union's Horizon Europe research and innovation programme (grant agreement No. 101201229).
 
 format:
   html:
+    theme: [cosmo, custom.scss]
     from: markdown-smart
-    minimal: true
+    grid:
+      body-width: 720px
+    toc: true
+    toc-depth: 2
+    toc-location: right
+    toc-title: Contents
     tbl-cap-location: bottom
-    css: /style.css
-    section-divs: false
-    smooth-scroll: false
-    anchor-sections: false
     lang: en
 
 crossref:

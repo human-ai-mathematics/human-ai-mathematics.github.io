@@ -1,47 +1,12 @@
 ---
 pagetitle: "The landscape of mathematics with AI"
+title: "Mathematics with AI: a unified view of the landscape"
+subtitle: "AI systems now produce mathematics faster than the community can record, check, connect and read it. This page maps what a shared infrastructure would have to do, what already exists, and what is missing."
 description: "AI systems now produce mathematics faster than the community can record, check, connect and read it. What a shared infrastructure would have to do, what exists on 21 October 2026, and what is missing."
 ---
 
-::: back
-[← Human–AI Mathematics](../)
-:::
-
-# Mathematics with AI: a unified view of the landscape
-
-::: lede
-AI systems now produce mathematics faster than the community can record, check, connect and read it. This page maps what a shared infrastructure would have to do, what already exists, and what is missing.
-:::
-
 ::: note
 **State of the landscape on 21 October 2026.** This page will be revised: the landscape changes weekly. How it was surveyed and checked is in [§ 8](#sources).
-:::
-
-**Contents**
-
-[Part I · The landscape in brief](#in-brief)
-
-::: plain
-- [What changed](#purpose)
-- [Five layers, two concerns](#layers)
-- ["Verified" means four different things](#verified)
-- [One problem, many systems](#many-systems)
-- [What exists and what is missing](#in-brief-coverage)
-- [Three ways to organize it](#in-brief-architectures)
-- [Five things to remember](#takeaways)
-:::
-
-[Part II · The survey in detail](#detail)
-
-::: aims
-1.  [A unified view: what a framework has to do](#unified-view)
-2.  [Coverage map](#coverage)
-3.  [The landscape, function by function](#landscape)
-4.  [Interoperability that already exists](#interoperability)
-5.  [Gaps and overlaps](#gaps)
-6.  [Candidate architectures](#architectures)
-7.  [Glossary](#glossary)
-8.  [Sources and verification](#sources)
 :::
 
 ::: {#in-brief .part}

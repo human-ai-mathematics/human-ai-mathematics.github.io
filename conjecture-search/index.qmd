@@ -1,17 +1,9 @@
 ---
 pagetitle: "Conjecture search"
+title: "Conjecture search"
+subtitle: "Our modest proposal for one part of the [landscape](../landscape/): a sustained search, by humans and AI agents, to prove or refute one hard statement, in which every result can be trusted."
 description: "A sustained human–AI search to prove or refute one hard statement, with every status certified: principles, the KLS manuscript, the template, and what comes next."
 ---
-
-::: back
-[← Human–AI Mathematics](../)
-:::
-
-# Conjecture search
-
-::: lede
-Our modest proposal for one part of the [landscape](../landscape/): a sustained search, by humans and AI agents, to prove or refute one hard statement, in which every result can be trusted.
-:::
 
 On a hard question, agents produce proof attempts, reductions, numerical experiments and candidate counterexamples, over many sessions. Without structure, what was learned is lost between sessions, dead ends are explored again, and a convincing argument passes for a proof. Conjecture search gives that work one shared record, and a manuscript a mathematician can read and check.
 

@@ -1,17 +1,9 @@
 ---
 pagetitle: "How conjecture search works"
+title: "How it works"
+subtitle: "The life of a statement, the repository that holds it, and how a mathematician can take part."
 description: "How a human–AI conjecture search is organized: the life of a statement, the repository, and how a mathematician can contribute."
 ---
-
-::: back
-[← Conjecture search](./)
-:::
-
-# How it works
-
-::: lede
-The life of a statement, the repository that holds it, and how a mathematician can take part.
-:::
 
 A search is organized around one target statement. It lives in a repository with two faces: a manuscript written for a mathematician, and a research record that keeps the search going across sessions and agents. Agents work in three roles: a *researcher* who proves, refutes or explores, a *reviewer* who checks a proof without having seen how it was made, and a *writer* who improves the prose without changing what is claimed. One file, the *ledger*, says what is proved, and a status changes only through an independent review or the explicit acceptance of a named person.
 
