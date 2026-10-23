@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The landscape of mathematics with AI</title>
-<meta name="description" content="What a framework for mathematics done with AI has to do, and where the tools, registries, venues and norms that exist on 21 October 2026 fall on that map.">
+<meta name="description" content="AI systems now produce mathematics faster than the community can record, check, connect and read it. What a shared infrastructure would have to do, what exists on 21 October 2026, and what is missing.">
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -12,52 +12,343 @@
   <p class="back"><a href="../">← Human–AI Mathematics</a></p>
 
   <h1>Mathematics with AI: a unified view of the landscape</h1>
-  <p class="lede">What a framework for mathematics done with AI has to do, what already exists
-  for each of its functions, and where efforts overlap or nothing exists yet.</p>
+  <p class="lede">AI systems now produce mathematics faster than the community can record,
+  check, connect and read it. This page maps what a shared infrastructure would have to do,
+  what already exists, and what is missing.</p>
 
-  <p class="note"><strong>State of the landscape on 21 October 2026.</strong> Written from six
-  parallel surveys run that day, which opened each project's own pages and recorded about 330
-  entries; a separate pass checked the figures, dates and quotations on this page against those
-  pages. Of the 479 distinct links the surveys collected, 451 answered HTTP 200 that day; the
-  others are listed in <a href="#sources">§ 8</a>. Figures marked "self-reported" come from the
-  project's own page and were not checked independently. This page will be revised: the
-  landscape changes weekly.</p>
+  <p class="note"><strong>State of the landscape on 21 October 2026.</strong> This page will be
+  revised: the landscape changes weekly. How it was surveyed and checked is in
+  <a href="#sources">§ 8</a>.</p>
 
   <p><strong>Contents</strong></p>
+  <p><a href="#in-brief">Part I · The landscape in brief</a></p>
+  <ul class="plain">
+    <li><a href="#purpose">What changed</a></li>
+    <li><a href="#layers">Five layers, two concerns</a></li>
+    <li><a href="#verified">"Verified" means four different things</a></li>
+    <li><a href="#many-systems">One problem, many systems</a></li>
+    <li><a href="#in-brief-coverage">What exists and what is missing</a></li>
+    <li><a href="#in-brief-architectures">Three ways to organize it</a></li>
+    <li><a href="#takeaways">Five things to remember</a></li>
+  </ul>
+  <p><a href="#detail">Part II · The survey in detail</a></p>
   <ol class="aims">
-    <li><a href="#purpose">Purpose and scope</a></li>
     <li><a href="#unified-view">A unified view: what a framework has to do</a></li>
     <li><a href="#coverage">Coverage map</a></li>
     <li><a href="#landscape">The landscape, function by function</a></li>
     <li><a href="#interoperability">Interoperability that already exists</a></li>
     <li><a href="#gaps">Gaps and overlaps</a></li>
     <li><a href="#architectures">Candidate architectures</a></li>
+    <li><a href="#glossary">Glossary</a></li>
     <li><a href="#sources">Sources and verification</a></li>
   </ol>
 
-  <h2 id="purpose">1. Purpose and scope</h2>
-  <p>Since the summer of 2026, AI systems have been producing mathematics in quantity: proofs
-  of open problems, very large formal libraries, bulk releases of manuscripts. In response, the
-  mathematical community has built, in a few months, a large number of tools, registries,
-  venues and norms. Each addresses one part of the problem.</p>
+  <p class="part" id="in-brief"><span>Part I</span>The landscape in brief</p>
 
-  <p>This page does not list them for their own sake. It starts from a question: <strong>what
-  does a framework for mathematics done with AI have to do, as a whole?</strong> It then places
-  what exists on that map, and shows where efforts overlap and where nothing exists.</p>
+  <h2 id="purpose">What changed</h2>
+  <p>Since the summer of 2026, AI systems have been producing mathematics in quantity.
+  Anthropic's formalization of Fermat's Last Theorem is about 13 million lines of Lean, written
+  in 11 days. OpenAI posed about 4,000 problems and published results for 372 families of them.
+  arXiv now limits each submitter to two new submissions a month, and six probability and
+  statistics journals paused submissions in October, citing AI-driven volume. In a few months
+  the community has built a large number of tools, registries, venues and norms in response;
+  each addresses one part of the problem.</p>
 
-  <p><strong>Selection.</strong> A project is included if it is public, active or historically
-  important, and serves at least one of the functions in <a href="#unified-view">§ 2</a>.
-  Popularity is not a criterion: GitHub stars are an unreliable signal (one repository surveyed
-  has 16,600 stars on three commits). We report activity and verified outputs instead.</p>
+  <p>The bottleneck has moved. Finding proofs is no longer the only hard part. Knowing which
+  ones are correct, which prove the statement that was meant, which are new, and which someone
+  has understood, is now at least as hard.</p>
 
-  <p><strong>What this page is not.</strong> It is not a ranking, it makes no judgement on the
-  quality of other projects' mathematics, and it is a snapshot. The landscape changes
-  weekly.</p>
+  <p class="key">AI can now produce mathematics in quantity. What is missing is a shared way to
+  record it, check it, connect it and read it.</p>
 
-  <h2 id="unified-view">2. A unified view: what a framework has to do</h2>
-  <h3>2.1 Five layers and two cross-cutting concerns</h3>
+  <p>This page starts from a question: what would such a shared infrastructure have to do, as a
+  whole? It places what exists on that map, and shows where efforts overlap and where nothing
+  exists yet. It is not a ranking, it makes no judgement on the quality of other projects'
+  mathematics, and it does not propose a new platform.</p>
+
+  <p><strong>How to read it.</strong> Part I gives the argument; Part II is the survey it rests
+  on, with every source. We keep three kinds of statement apart: what we found (the entries of
+  the survey), what we conclude from it (the coverage map and the boxes headed <em>What this
+  shows</em>), and what we propose (<a href="#architectures">§ 6</a>).</p>
+
+  <h2 id="layers">Five layers, two concerns</h2>
+  <p>A shared infrastructure has to answer five questions, from the raw material to what a
+  reader sees. We read the landscape as five layers, with two concerns that cut across all of
+  them. This is a grid for reading what exists, not a structure to impose.</p>
+
+  <figure class="fig">
+    <div class="layers">
+      <div class="stack">
+        <div class="box layer"><b>5</b><span><strong>Views and venues</strong><small>How does a
+        person read it, cite it, build on it?</small></span><span class="state emerging">emerging</span></div>
+        <div class="box layer"><b>4</b><span><strong>Evidence</strong><small>Why should anyone
+        believe it, and is it new?</small></span><span class="state frag">uneven</span></div>
+        <div class="box layer focus"><b>3</b><span><strong>Work</strong><small>What has been
+        tried, what failed, and why?</small></span><span class="state frag">young, fragmented</span></div>
+        <div class="box layer"><b>2</b><span><strong>Statements and identity</strong><small>What
+        exactly is claimed? Is it the same claim as that one?</small></span><span class="state frag">partial</span></div>
+        <div class="box layer"><b>1</b><span><strong>Sources and objects</strong><small>What is
+        known, what is asked, where is it written?</small></span><span class="state well">well served</span></div>
+      </div>
+      <div class="box cross"><strong>Provenance</strong> · who or what produced each piece</div>
+      <div class="box cross"><strong>Governance</strong> · who decides, who pays</div>
+    </div>
+    <figcaption>Figure 1. Five layers, from sources (bottom) to what a reader sees (top), and two
+    concerns that run through all of them. The state of each layer is our assessment
+    (<a href="#coverage">§ 2</a>); the work layer, outlined, is the newest.</figcaption>
+  </figure>
+
+  <ol class="steps">
+    <li><strong>Sources and objects.</strong> An agent that does not know what has been proved,
+    refuted or asked wastes its time, or presents an old result as new. Problem lists,
+    bibliographies and databases of objects are plentiful, but scattered: the same Erdős
+    problem appears in eight registries, each with its own identifier
+    (<a href="#sources-problems">§ 3.1</a>).</li>
+    <li><strong>Statements and identity.</strong> Two searches can share what they learned only
+    if they know they are working on the same statement. Extraction works at scale
+    (TheoremGraph holds 11.7 million statements), but nobody deduplicates them, gives them a
+    status, or checks the links between them (<a href="#statements-identity">§ 3.2</a>).</li>
+    <li><strong>Work.</strong> A search leaves more than its result: routes, obstacles,
+    counterexamples, abandoned ideas. Anthropic's zeta result reports about 650 ideas tried in a
+    first attempt, "none of which worked". Most such traces vanish when a run ends; the
+    richest record from before AI, the Polymath wiki, now returns 404. This layer is the newest
+    and the least visible (<a href="#process-records">§ 3.3</a>).</li>
+    <li><strong>Evidence.</strong> "Verified" covers four different checks, described
+    <a href="#verified">below</a>; whether a result is new is a separate question
+    (<a href="#formal-certification">§ 3.5</a>, <a href="#novelty">§ 3.6</a>).</li>
+    <li><strong>Views and venues.</strong> A checked proof is not yet an understood one:
+    Anthropic's FLT formalization was "written to be checked rather than read". Correctness,
+    exposition and deposit now each have their own venues (<a href="#venues">§ 3.7</a>).</li>
+  </ol>
+
+  <p>Across all layers, <strong>provenance</strong> records who or what produced each piece,
+  with which model and which human steering (<a href="#provenance">§ 3.8</a>), and
+  <strong>governance</strong> sets the rules, funds the infrastructure and decides who is
+  responsible (<a href="#governance">§ 3.9</a>). Part II names the functions F1 to F13; the
+  labels are a grid, not levels of maturity.</p>
+
+  <h2 id="verified">"Verified" means four different things</h2>
+  <p>Take an illustration, not a real case. Someone wants to prove Goldbach's conjecture, that
+  every even number greater than 2 is a sum of two primes, and the formal statement given to
+  Lean says, by mistake, every even number from 4 to 1,000. Lean will accept a correct proof
+  of that statement: the <a href="#glossary-kernel">kernel</a> check passes, and the
+  conjecture is not proved. Checking a proof and checking its statement are different
+  jobs.</p>
+
+  <p>Real cases are subtler, and frequent. AI audits of the Annals Challenge found formalization
+  mistakes in 11 of 50 statements written and reviewed by experts. Formal Conjectures has merged
+  511 fixes of misformalized statements out of 3,604. A blog post showed that several
+  <a href="#glossary-comparator">Comparator</a> challenges in openai/math could be gamed through
+  <code>definition_names</code>.</p>
+
+  <figure class="fig">
+    <div class="signals">
+      <div class="box"><strong>Kernel</strong><small>A proof assistant accepts the
+      proof.</small><span class="state well">solved</span></div>
+      <div class="box"><strong>Statement faithfulness</strong><small>The formal statement says
+      what the informal one says.</small><span class="state frag">weak point</span></div>
+      <div class="box"><strong>Agent review</strong><small>Independent AI agents check the
+      argument.</small><span class="state frag">fragmented</span></div>
+      <div class="box"><strong>Named human</strong><small>An identified person with no stake
+      has read and understood it.</small><span class="state scarce">scarce</span></div>
+      <div class="box apart"><strong>Novelty</strong><small>Was it already known? A separate
+      question.</small><span class="state gap">nobody certifies it</span></div>
+    </div>
+    <figcaption>Figure 2. Four signals that catch different errors, and novelty, which none of
+    them settles. Each is a separate signal, not a rung of one ladder.</figcaption>
+  </figure>
+
+  <p>So "verified" covers four signals. A proof can have a named human referee and no
+  formalization, or a kernel check on the wrong statement; agreement between agents is useful
+  but is no guarantee. A reader should be able to see, for each claim, which of the four it
+  has. <a href="#glossary-faithfulness">Statement faithfulness</a> is the weak link of formal
+  certification, and novelty is certified by nobody: Palomar states that it does not judge it
+  (<a href="#certification-kinds">§ 1.2</a>).</p>
+
+  <h2 id="many-systems">One problem, many systems</h2>
+  <p>Follow one result. The problem sits in a registry. Agents work on it and record their
+  attempts. The proof is formalized in Lean and registered on Palomar. A write-up is deposited
+  on Hexagon or reviewed on ProofForum. Each system can do its own job well; little connects
+  them.</p>
+
+  <figure class="fig">
+    <div class="flow">
+      <div class="box"><strong>Problem registry</strong><small>Erdős number, Formal
+      Conjectures name, Wikidata QID</small></div>
+      <div class="link"></div>
+      <div class="box"><strong>Process record</strong><small>Euler, Math Lab, Plectis…, each in
+      its own format</small></div>
+      <div class="link"></div>
+      <div class="box"><strong>Formal proof</strong><small><code>Challenge.lean</code> +
+      Comparator; <code>PALOMAR-…-vN</code></small></div>
+      <div class="link"></div>
+      <div class="box"><strong>Deposit and review</strong><small><code>hexagon:YYMM.NNNNNvN</code>,
+      <code>PF:YYYY.NNNNNN/vN/THM-x</code></small></div>
+      <div class="bypass"></div>
+      <p class="bypass-label">Solid line: a link already in place. erdosproblems.com and Formal
+      Conjectures point to Palomar IDs, bypassing any process record.</p>
+    </div>
+    <figcaption>Figure 3. The path of one result through four kinds of system, with their real
+    identifier formats. Dashed: no shared identifier or format between the two. The
+    identifiers are listed in <a href="#interoperability">§ 4</a>.</figcaption>
+  </figure>
+
+  <p>Some conventions already connect systems and can be adopted as they stand
+  (<a href="#interoperability">§ 4</a>): <a href="#glossary-formalization-yaml"><code>formalization.yaml</code></a>
+  carries provenance and review status, <code>Challenge.lean</code> with Comparator pins the
+  trusted statement, Palomar IDs pin a formal result, and Wikidata
+  <a href="#glossary-qid">QIDs</a> and Stacks tags identify concepts. Two things are
+  missing:</p>
+
+  <ul class="plain">
+    <li><strong>A <a href="#glossary-crosswalk">crosswalk</a></strong>: a table saying that
+    these identifiers, in these registries, name the same statement. This is harder than for
+    books in a library catalogue, because two statements can be equivalent without being worded
+    alike.</li>
+    <li><strong>A shared format for <a href="#glossary-process-record">process
+    records</a></strong>: at least eight systems record routes and dead ends, and none can read
+    another's.</li>
+  </ul>
+
+  <p>What is needed is interoperability, not one more registry: systems that exchange
+  structured records without all running the same software.</p>
+
+  <h2 id="in-brief-coverage">What exists and what is missing</h2>
+  <figure class="fig">
+    <div class="coverage-grid">
+      <div class="box"><small>F1</small>Problem registries <span class="state well">well served</span></div>
+      <div class="box"><small>F3</small>Formal libraries <span class="state well">well served</span></div>
+      <div class="box"><small>F4</small>Kernel checking <span class="state well">well served</span></div>
+      <div class="box"><small>F9</small>Agent tooling <span class="state well">well served</span></div>
+      <div class="box"><small>F10</small>Search <span class="state well">well served</span></div>
+      <div class="box"><small>F2</small>Statements and dependencies <span class="state frag">extracted, not curated</span></div>
+      <div class="box"><small>F4</small>Statement faithfulness <span class="state frag">fragmented</span></div>
+      <div class="box"><small>F4</small>Agent review <span class="state frag">fragmented</span></div>
+      <div class="box"><small>F5</small>Provenance <span class="state frag">fragmented</span></div>
+      <div class="box"><small>F6</small>Process records <span class="state frag">young, fragmented</span></div>
+      <div class="box"><small>F11</small>Governance <span class="state frag">concentrated</span></div>
+      <div class="box"><small>F12</small>Identity and crosswalks <span class="state frag">partial</span></div>
+      <div class="box"><small>F7</small>Exposition <span class="state emerging">emerging</span></div>
+      <div class="box"><small>F8</small>Deposit and venues <span class="state emerging">rebuilding</span></div>
+      <div class="box"><small>F4</small>Named human review <span class="state scarce">scarce</span></div>
+      <div class="box"><small>F13</small>Novelty <span class="state gap">gap</span></div>
+    </div>
+    <figcaption>Figure 4. How well each function is served on 21 October 2026, in our
+    assessment: a full dot is well served, a half dot fragmented or partial, a quarter dot
+    emerging or scarce, an empty dot a gap. Details and actors in
+    <a href="#coverage">§ 2</a>.</figcaption>
+  </figure>
+
+  <p>The map is lopsided. The tools to produce and check mathematics are mature: formal
+  libraries, kernels, agent tooling, search. What lets results accumulate is not: a memory of
+  what was tried, identities that line up across systems, a record of who checked what, a check
+  of novelty. The gaps fall into four families (<a href="#gaps">§ 5</a>):</p>
+
+  <ul class="plain">
+    <li><strong>Memory.</strong> Process records have no standard, and no venue accepts them.
+    Hosted wikis and blog threads disappear.</li>
+    <li><strong>Identity.</strong> Informal and formal statements are linked only by free text.
+    Agents can read curated sources such as LMFDB or zbMATH, but cannot propose a correction to
+    them, with its provenance, through an interface.</li>
+    <li><strong>Trust.</strong> Faithfulness reviews have no record format, provenance is
+    recorded per paper rather than per claim, and novelty is certified by nobody. Nobody records
+    what an agent had seen before it agreed, so three agreeing agents may be one opinion
+    repeated; Math Lab tests exactly this, with blind and informed agents.</li>
+    <li><strong>Capacity.</strong> Named human review is scarce: journals pause submissions,
+    Mathlib review lags contributions. Cheaper signals such as agent review are needed, and must
+    be labelled as such.</li>
+  </ul>
+
+  <p>These states are our assessment of the survey, not grades given to projects.</p>
+
+  <h2 id="in-brief-architectures">Three ways to organize it</h2>
+  <figure class="fig">
+    <div class="arch">
+      <div class="card">
+        <span class="tag">A</span>
+        <p><strong>One platform</strong></p>
+        <svg viewBox="0 0 120 70" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M15 15 60 35M105 15 60 35M15 55 60 35M105 55 60 35"/>
+          <rect class="acc" x="47" y="23" width="26" height="24" rx="3"/>
+          <circle cx="15" cy="15" r="6"/><circle cx="105" cy="15" r="6"/>
+          <circle cx="15" cy="55" r="6"/><circle cx="105" cy="55" r="6"/>
+        </svg>
+        <p><small>For: one interface, coherent identifiers. Against: one operator holds the
+        records and competes with trusted registries.</small></p>
+      </div>
+      <div class="card chosen">
+        <span class="tag live">B · our choice</span>
+        <p><strong>A federation</strong></p>
+        <svg viewBox="0 0 120 70" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2">
+          <path class="acc" d="M20 18 60 10 100 20M20 18 35 55 85 55 100 20M60 10 35 55M60 10 85 55"/>
+          <circle cx="20" cy="18" r="6"/><circle cx="60" cy="10" r="6"/><circle cx="100" cy="20" r="6"/>
+          <circle cx="35" cy="55" r="6"/><circle cx="85" cy="55" r="6"/>
+        </svg>
+        <p><small>For: builds on what works, no single owner. Against: needs agreement on
+        formats; nobody is in charge of coherence.</small></p>
+      </div>
+      <div class="card">
+        <span class="tag">C</span>
+        <p><strong>A new registry</strong></p>
+        <svg viewBox="0 0 120 70" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M15 20 45 12 30 52 15 20"/>
+          <path class="acc" stroke-dasharray="4 3" d="M45 12 82 32M30 52 82 40"/>
+          <circle cx="15" cy="20" r="6"/><circle cx="45" cy="12" r="6"/><circle cx="30" cy="52" r="6"/>
+          <rect class="acc" x="82" y="22" width="28" height="26" rx="3"/>
+        </svg>
+        <p><small>For: gives process records a home and a citation. Against: a new institution
+        to fund and govern, before formats exist.</small></p>
+      </div>
+    </div>
+    <figcaption>Figure 5. Three ways to organize the whole: one platform that holds
+    everything, existing systems that exchange shared records, or a new registry added for
+    informal research records.</figcaption>
+  </figure>
+
+  <p>We favour B first, because it is cheap and reversible, builds on what works
+  (<code>formalization.yaml</code>, Comparator, Palomar, Hexagon), and its formats would be
+  needed by A or C anyway. It standardizes four records, kept as files under version control and
+  pointing to each other by stable identifiers:</p>
+
+  <ul class="plain">
+    <li>a <strong>statement record</strong>: the canonical statement and its identifiers in
+    each registry;</li>
+    <li>an <strong>evidence record</strong>: which of the four checks, by whom or what, on which
+    version, and what the checker had seen;</li>
+    <li>a <strong>process record</strong>: routes, obstacles, refutations and abandonments, with
+    reasons;</li>
+    <li>a <strong>provenance record</strong>: model, role, human steering, and a pointer to the
+    run log.</li>
+  </ul>
+
+  <p>These records do not exist yet; they are a proposal. Possible first steps: a
+  <code>process:</code> extension of <code>formalization.yaml</code>, whose schema tolerates
+  unknown keys; a comparison of the formats that Euler, Math Lab, labyrinth-exploration,
+  OpenTheory and the Portolan schema already use, before any new one is written; and a mapping
+  between the existing certification ladders. The full comparison and the open questions are
+  in <a href="#architectures">§ 6</a>.</p>
+
+  <h2 id="takeaways">Five things to remember</h2>
+  <ol class="steps">
+    <li><strong>A proof is one part of research.</strong> Identifying the problem, keeping the
+    steps, checking, judging novelty and understanding are the others.</li>
+    <li><strong>A valid formal proof does not show that the right problem was solved.</strong>
+    Faithfulness, novelty and human understanding need their own checks.</li>
+    <li><strong>Failed attempts are knowledge.</strong> Recorded, they let the next search,
+    human or agent, start where the last one stopped.</li>
+    <li><strong>The tools exist; the links between them do not.</strong> Shared identifiers and
+    formats matter as much as new platforms.</li>
+    <li><strong>Start with shared formats.</strong> A federation of existing systems first, a
+    new institution later if it is still needed.</li>
+  </ol>
+
+  <p class="part" id="detail"><span>Part II</span>The survey in detail</p>
+
+  <h2 id="unified-view">1. A unified view: what a framework has to do</h2>
+  <h3>1.1 Five layers and two cross-cutting concerns</h3>
   <p>We organize the functions in layers, from raw material to what a reader sees, with a layer
-  for <strong>work in progress</strong> between statements and evidence.</p>
+  for <strong>work in progress</strong> between statements and evidence. The labels F1–F13 name
+  the functions; they are a grid for reading the landscape, not levels of maturity.</p>
 
   <div class="table-wrap">
     <table>
@@ -88,7 +379,7 @@
         <tr>
           <td><strong>4. Evidence</strong></td>
           <td>F3 formal libraries · F4 certification (four kinds,
-          <a href="#certification-kinds">§ 2.2</a>) · F13 novelty and prior art</td>
+          <a href="#certification-kinds">§ 1.2</a>) · F13 novelty and prior art</td>
           <td>Why should anyone believe it, and is it new?</td>
         </tr>
         <tr>
@@ -116,9 +407,10 @@
   denominators, compute environment, blind versus informed agents) are folded into the
   functions above and discussed where they arise.</p>
 
-  <h3 id="certification-kinds">2.2 Certification is four different things</h3>
+  <h3 id="certification-kinds">1.2 Certification is four different things</h3>
   <p>Several surveys arrived at the same observation: "verified" now covers four signals that
-  catch different errors and must not be merged.</p>
+  catch different errors and must not be merged (an example is in
+  <a href="#verified">Part I</a>).</p>
 
   <ol class="steps">
     <li><strong>Kernel</strong>: a proof assistant accepts the proof. Now hardened: Lean
@@ -138,7 +430,7 @@
   <p>A fifth question, <strong>novelty</strong> (F13), is certified by nobody: Palomar states
   that it does not judge it, and AI-result trackers record it at best as a per-entry field.</p>
 
-  <h3>2.3 How the layers depend on each other</h3>
+  <h3>1.3 How the layers depend on each other</h3>
   <ul class="plain">
     <li><strong>Work needs identity.</strong> Two searches cannot share what they learned
     unless they know they are working on the same statement (layer 2 under layer 3).</li>
@@ -149,7 +441,7 @@
     each claim, which of the four kinds of certification it has and what produced it.</li>
   </ul>
 
-  <h2 id="coverage">3. Coverage map</h2>
+  <h2 id="coverage">2. Coverage map</h2>
   <p>How well each function is served today. "Well served" means several mature, interoperable
   tools exist; "fragmented" means many tools without a shared format; "gap" means almost
   nothing exists.</p>
@@ -259,11 +551,11 @@
     </table>
   </div>
 
-  <h2 id="landscape">4. The landscape, function by function</h2>
+  <h2 id="landscape">3. The landscape, function by function</h2>
   <p>Each entry gives what the project does and who certifies what. Statuses are as of 21
   October 2026.</p>
 
-  <h3 id="sources-problems">4.1 Sources, problems and objects (F1, F10)</h3>
+  <h3 id="sources-problems">3.1 Sources, problems and objects (F1, F10)</h3>
   <p><strong>Problem registries curated by people</strong></p>
 
   <ul class="plain">
@@ -334,12 +626,12 @@
     author and forbids AI authorship, AI-written comments and bulk AI submissions.</li>
   </ul>
 
-  <p><em>Observation.</em> The same Erdős problem can appear in erdosproblems.com,
+  <p class="finding"><strong>What this shows.</strong> The same Erdős problem can appear in erdosproblems.com,
   teorth/erdosproblems, Formal Conjectures, FrontierMath, VibeMathed, the aimath index, Large
   Math Initiative and Palomar, each with its own identifier and only pairwise links between
   them. What is missing is a crosswalk, not one more registry.</p>
 
-  <h3 id="statements-identity">4.2 Statements, dependencies and identity (F2, F12)</h3>
+  <h3 id="statements-identity">3.2 Statements, dependencies and identity (F2, F12)</h3>
   <ul class="plain">
     <li><strong>Extraction at scale.</strong>
     <a href="https://www.theoremsearch.com">TheoremSearch</a> (8.4M theorems indexed, REST and
@@ -364,7 +656,7 @@
     the verifier, never the author; fingerprints make a change of meaning visible as a diff;
     tasks are claimed with a bot. It audits the dependencies of a literature rather than
     recording a search.</li>
-    <li><strong>Blueprints.</strong>
+    <li><strong><a href="#glossary-blueprint">Blueprints</a>.</strong>
     <a href="https://github.com/PatrickMassot/leanblueprint">leanblueprint</a> (de facto
     standard, no commits since December 2025),
     <a href="https://github.com/leanprover/verso-blueprint">Verso Blueprint</a>,
@@ -374,11 +666,11 @@
     <a href="https://arxiv.org/abs/2601.15294">KnowTeX</a> (dependency graphs from LaTeX).</li>
   </ul>
 
-  <p><em>Observation.</em> Extraction is solved at scale; curation, status and identity are
+  <p class="finding"><strong>What this shows.</strong> Extraction is solved at scale; curation, status and identity are
   not. No graph format carries a non-formal status such as "reviewed", "refuted" or
   "abandoned".</p>
 
-  <h3 id="process-records">4.3 Work: research-process records (F6)</h3>
+  <h3 id="process-records">3.3 Work: research-process records (F6)</h3>
   <p>A targeted search found that this function, long served only by blog comments and wikis,
   <strong>is no longer empty</strong>: at least eight public systems, most of them created
   between March and October 2026, record the routes, blockers or dead ends of a search driven
@@ -500,16 +792,16 @@
   <p><strong>The richest pre-AI records are disappearing.</strong> The Polymath wiki returns
   404 and Woeginger's list of claimed P-vs-NP proofs returns 503.</p>
 
-  <p><em>Observation.</em> Recording routes and dead ends is now a recognized need, met by
+  <p class="finding"><strong>What this shows.</strong> Recording routes and dead ends is now a recognized need, met by
   young, single-maintainer projects with incompatible formats. Outside mathematics, the
   <a href="https://github.com/portolansoft/nrr">Portolan Negative-Results Record</a> is the
   only schema for negative results we found.</p>
 
-  <h3 id="agent-tooling">4.4 Work: agent tooling, harnesses and compute (F9)</h3>
+  <h3 id="agent-tooling">3.4 Work: agent tooling, harnesses and compute (F9)</h3>
   <ul class="plain">
     <li><strong>Formal coordination platforms</strong> have converged on one design: a graph of
-    Lean statements as the system of record, contract-scoped worker and reviewer agents, CI
-    gating, faithfulness checked before proving. <a href="https://prove2.me/">Prove2Me</a>
+    Lean statements as the system of record, contract-scoped worker and reviewer agents,
+    <a href="#glossary-ci">CI</a> gating, faithfulness checked before proving. <a href="https://prove2.me/">Prove2Me</a>
     (missions, server-side checking, <code>SKETCH_ACCEPTED</code> for reductions to open
     children, blind "read-backs" of statements by fresh-context agents; the coordination layer
     of Anthropic's FLT formalization),
@@ -546,14 +838,14 @@
     16 October 2026).</li>
     <li><strong>Harness optimization</strong>:
     <a href="https://github.com/google-research/harness2">Harness²</a> (Google Research) tunes
-    an agent's harness against recorded runs. Not specific to mathematics.</li>
+    an agent's <a href="#glossary-harness">harness</a> against recorded runs. Not specific to mathematics.</li>
   </ul>
 
-  <p><em>Observation.</em> Integration has converged on two formats, MCP servers and
-  <code>SKILL.md</code> files. Where an agent runs decides who holds its logs: hosted platforms
+  <p class="finding"><strong>What this shows.</strong> Integration has converged on two formats,
+  <a href="#glossary-mcp">MCP</a> servers and <a href="#glossary-skill"><code>SKILL.md</code></a> files. Where an agent runs decides who holds its logs: hosted platforms
   keep them, a git repository keeps them portable.</p>
 
-  <h3 id="formal-certification">4.5 Evidence: formal libraries and certification (F3, F4)</h3>
+  <h3 id="formal-certification">3.5 Evidence: formal libraries and certification (F3, F4)</h3>
   <p><strong>Libraries and their governance.</strong> Three regimes now coexist for AI-written
   formal code:</p>
 
@@ -616,12 +908,12 @@
   second-batch page). <a href="https://pith.science">Pith</a>: automated public reviews of
   about 398,000 preprints, "no substitute for expert scrutiny".</p>
 
-  <p><em>Observation.</em> Kernel checking is solved; faithfulness and human understanding are
+  <p class="finding"><strong>What this shows.</strong> Kernel checking is solved; faithfulness and human understanding are
   not. No shared record format exists for a faithfulness review:
   <code>formalization.yaml</code> has only a free-text <code>fidelity.divergences</code> and a
   coarse <code>review.status</code>.</p>
 
-  <h3 id="novelty">4.6 Evidence: novelty and prior art (F13)</h3>
+  <h3 id="novelty">3.6 Evidence: novelty and prior art (F13)</h3>
   <p>No project certifies novelty. Palomar says so explicitly. The OpenAI release describes no
   literature check; the Erdős problems site makes no novelty judgement on the OpenAI claims.
   What exists is per-entry: the categories of the community wiki on AI contributions to Erdős
@@ -631,7 +923,7 @@
   <a href="https://citedbyagi.com/">Cited by AGI</a> (which ranks the human authors cited by
   the OpenAI manuscripts).</p>
 
-  <h3 id="venues">4.7 Views and venues (F7, F8)</h3>
+  <h3 id="venues">3.7 Views and venues (F7, F8)</h3>
   <ul class="plain">
     <li><strong>Deposit.</strong>
     <a href="https://info.arxiv.org/help/moderation/index.html">arXiv</a> requires disclosure
@@ -651,17 +943,17 @@
     Project</a> (a bibliography of 523 papers, 18 digestions so far; "If a step in Bourgain's
     paper could not be verified, the digestion should say so plainly"; AI use must be
     disclosed), <a href="https://www.mathematicaldiscourse.org/">Mathematical Discourse</a> (a
-    video overlay journal that reviews exposition, not correctness),
+    video <a href="#glossary-overlay">overlay journal</a> that reviews exposition, not correctness),
     <a href="https://amathr.org/prizes/paper-of-the-future-prize/">Paper of the Future
     Prize</a>, <a href="https://github.com/mathcommunity/oai-math-revised">oai-math-revised</a>
     (a community overlay improving the OpenAI write-ups), Tao's digestion posts.</li>
   </ul>
 
-  <p><em>Observation.</em> Correctness, exposition and deposit now have separate venues.
+  <p class="finding"><strong>What this shows.</strong> Correctness, exposition and deposit now have separate venues.
   <strong>No venue accepts a record of process</strong>: a certified "route report" or
   "obstacle note" has nowhere to go.</p>
 
-  <h3 id="provenance">4.8 Cross-cutting: provenance and disclosure (F5)</h3>
+  <h3 id="provenance">3.8 Cross-cutting: provenance and disclosure (F5)</h3>
   <p>Rules agree on content and differ on format:</p>
 
   <ul class="plain">
@@ -682,10 +974,10 @@
     mathematics, 55.9 % had no AI statement.</li>
   </ul>
 
-  <p><em>Observation.</em> Provenance is recorded per project or per paper, rarely per claim.
+  <p class="finding"><strong>What this shows.</strong> Provenance is recorded per project or per paper, rarely per claim.
   No machine-readable mapping between these formats exists.</p>
 
-  <h3 id="governance">4.9 Cross-cutting: governance, funding and norms (F11)</h3>
+  <h3 id="governance">3.9 Cross-cutting: governance, funding and norms (F11)</h3>
   <ul class="plain">
     <li><strong>Advice and declarations.</strong> <a href="https://agmai.org/">AGMAI</a>
     (Advisory Group on Mathematics and AI: Charles, De Lellis, Gowers, Hairer, Srivastava,
@@ -719,12 +1011,12 @@
     Prompts</a> keeps a running newsfeed of statements, policies and venues.</li>
   </ul>
 
-  <p><em>Observation.</em> Governance rests on a small, overlapping group of people, and much
+  <p class="finding"><strong>What this shows.</strong> Governance rests on a small, overlapping group of people, and much
   of the money comes from AI companies or their founders. On the French and European side we
   found a seminar series (SMF), an open letter to the EMS and no ERC programme specific to AI
   for mathematics.</p>
 
-  <h2 id="interoperability">5. Interoperability that already exists</h2>
+  <h2 id="interoperability">4. Interoperability that already exists</h2>
   <p>A unified framework does not have to be built from scratch: these conventions are already
   in use and can be adopted as they stand.</p>
 
@@ -793,8 +1085,8 @@
   crosswalk from an <strong>informal canonical statement</strong> to its formal and registry
   identifiers.</p>
 
-  <h2 id="gaps">6. Gaps and overlaps</h2>
-  <h3>6.1 Gaps</h3>
+  <h2 id="gaps">5. Gaps and overlaps</h2>
+  <h3>5.1 Gaps</h3>
   <ol class="steps">
     <li><strong>Process records have no standard.</strong> At least eight systems record routes
     and dead ends; none can read another's. No venue accepts them.</li>
@@ -818,7 +1110,7 @@
     survive better but still need a deposit or mirror.</li>
   </ol>
 
-  <h3>6.2 Overlaps</h3>
+  <h3>5.2 Overlaps</h3>
   <ul class="plain">
     <li><strong>AI-result trackers</strong>: the community wiki on AI contributions to Erdős
     problems (frozen since 30 June 2026), VibeMathed (1,284 entries), the aimath index (833),
@@ -832,7 +1124,7 @@
     survey's evidence ladder</a> express the same distinctions with different words.</li>
   </ul>
 
-  <h2 id="architectures">7. Candidate architectures</h2>
+  <h2 id="architectures">6. Candidate architectures</h2>
   <h3>A. One integrated platform</h3>
   <p>A single service holds problems, statements, work, evidence and views (the direction of
   Prove2Me on the formal side, or Euler on the research side).</p>
@@ -841,7 +1133,7 @@
     <li><em>For</em>: coherent identifiers, one interface, easy to use.</li>
     <li><em>Against</em>: one operator holds the records and the logs; it competes with
     registries, libraries and venues that the community already trusts; it is hard to govern
-    (<a href="#governance">§ 4.9</a> shows how concentrated governance already is).</li>
+    (<a href="#governance">§ 3.9</a> shows how concentrated governance already is).</li>
   </ul>
 
   <h3>B. A federation linked by shared records</h3>
@@ -853,7 +1145,7 @@
     <li>a <strong>statement record</strong>: canonical informal statement, with its crosswalk
     (QID, Formal Conjectures name, Lean name and <code>semantic_hash</code>, Palomar ID);</li>
     <li>an <strong>evidence record</strong>: which of the four kinds of certification
-    (<a href="#certification-kinds">§ 2.2</a>), by whom or what, on which fingerprinted
+    (<a href="#certification-kinds">§ 1.2</a>), by whom or what, on which fingerprinted
     version, with which independence (what the checker saw);</li>
     <li>a <strong>process record</strong>: route, obstacle, refutation, abandonment, with
     reasons;</li>
@@ -874,7 +1166,7 @@
 
   <ul class="plain">
     <li><em>For</em>: gives process records a home and a citation (gap
-    <a href="#gaps">6.1.1</a>).</li>
+    <a href="#gaps">5.1.1</a>).</li>
     <li><em>Against</em>: a new institution to fund and govern; premature before formats
     exist.</li>
   </ul>
@@ -904,12 +1196,69 @@
     results?</li>
   </ul>
 
+  <h2 id="glossary">7. Glossary</h2>
+  <dl class="glossary">
+    <dt id="glossary-kernel">kernel</dt>
+    <dd>The small core of a proof assistant (Lean, Isabelle, Coq…) that checks every step of a
+    formal proof. It checks the proof against the formal statement, not against what the
+    author meant.</dd>
+    <dt id="glossary-faithfulness">statement faithfulness</dt>
+    <dd>Whether a formal statement says what the informal one says. A proof of an unfaithful
+    statement proves a different theorem.</dd>
+    <dt id="glossary-comparator">Comparator</dt>
+    <dd>A Lean tool, now part of Lean core, that checks that a proof proves exactly the trusted
+    statement written in a <code>Challenge.lean</code> file.</dd>
+    <dt id="glossary-blueprint">blueprint</dt>
+    <dd>A human-readable plan of a formalization: the statements and their dependencies,
+    linked to the Lean code, showing what is done and what is left.</dd>
+    <dt id="glossary-crosswalk">crosswalk</dt>
+    <dd>A table of correspondences saying that identifiers in different registries name the
+    same problem or statement.</dd>
+    <dt id="glossary-qid">QID</dt>
+    <dd>The identifier of an item in Wikidata (Q followed by digits), used by Mathlib and
+    1000+ theorems to name concepts and theorems.</dd>
+    <dt id="glossary-semantic-hash"><code>semantic_hash</code></dt>
+    <dd>A fingerprint of a Lean statement that does not change when declarations are
+    renamed.</dd>
+    <dt id="glossary-formalization-yaml"><code>formalization.yaml</code></dt>
+    <dd>A metadata file describing a formalization: sources, how much was automated, which
+    models were used, review status, alignment of statements. YAML is a plain-text format for
+    structured data.</dd>
+    <dt id="glossary-process-record">process record</dt>
+    <dd>A structured record of a search rather than of its result: routes tried, obstacles,
+    refutations, abandoned approaches, with the reasons.</dd>
+    <dt id="glossary-mcp">MCP</dt>
+    <dd>Model Context Protocol: a standard way for an AI agent to call an external tool or
+    service, such as a proof assistant, a database or a search engine.</dd>
+    <dt id="glossary-skill"><code>SKILL.md</code></dt>
+    <dd>A file of instructions that packages a task for an AI agent, such as formalizing a
+    statement or refereeing a proof.</dd>
+    <dt id="glossary-harness">harness</dt>
+    <dd>The program around a model that runs it as an agent: which tools it can call, what it
+    sees, when it stops, how its output is checked.</dd>
+    <dt id="glossary-ci">CI</dt>
+    <dd>Continuous integration: checks that run automatically on every change to a
+    repository, for example rebuilding a Lean project.</dd>
+    <dt id="glossary-overlay">overlay journal</dt>
+    <dd>A journal that reviews and endorses work deposited elsewhere (arXiv, a repository)
+    instead of publishing it itself.</dd>
+  </dl>
+
   <h2 id="sources">8. Sources and verification</h2>
   <p><strong>Method.</strong> Six surveys (formal side; informal knowledge infrastructure;
   problems and results trackers; collaborative research and process records; venues, norms and
   institutions; agent tooling) opened each project's primary page on 21 October 2026, or used
-  its API or repository when the site blocks automated clients. GitHub dates come from the
-  GitHub API. A final pass checked every cited link with an HTTP request.</p>
+  its API or repository when the site blocks automated clients, and recorded about 330
+  entries. GitHub dates come from the GitHub API. A separate pass checked the figures, dates
+  and quotations on this page against those pages, and a final pass checked every cited link
+  with an HTTP request: of the 479 distinct links the surveys collected, 451 answered HTTP 200
+  that day. Figures marked "self-reported" come from the project's own page and were not
+  checked independently.</p>
+
+  <p><strong>Selection.</strong> A project is included if it is public, active or historically
+  important, and serves at least one of the functions in <a href="#unified-view">§ 1</a>.
+  Popularity is not a criterion: GitHub stars are an unreliable signal (one repository surveyed
+  has 16,600 stars on three commits). We report activity and verified outputs instead.</p>
 
   <p><strong>Links in the survey notes that did not answer 200 on 21 October 2026</strong> (28
   of 479; all links cited on this page answered, except three rate-limited ones read through
@@ -937,7 +1286,7 @@
   <p><strong>Disagreement between surveys.</strong> The problems survey found no project
   recording routes and obstacles for sustained search on one problem; the
   collaborative-research survey, which searched for exactly that, found about eight. This draft
-  follows the latter (<a href="#process-records">§ 4.3</a>).</p>
+  follows the latter (<a href="#process-records">§ 3.3</a>).</p>
 
 </main>
 </body>

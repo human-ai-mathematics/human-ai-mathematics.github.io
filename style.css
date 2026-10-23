@@ -8,16 +8,6 @@
   --card: #ffffff;
   --accent: #c4511a;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #12151c;
-    --fg: #e6e8ec;
-    --muted: #a0a7b4;
-    --rule: #2a2f3a;
-    --card: #191d26;
-    --accent: #f0864a;
-  }
-}
 * { box-sizing: border-box; }
 body {
   margin: 0;
@@ -81,3 +71,99 @@ th, td { padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--rule); text-alig
 th { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-weight: 600; color: var(--muted); border-bottom-width: 2px; }
 th:first-child, td:first-child { padding-left: 0; }
 td code { overflow-wrap: normal; }
+
+/* The start of a part, in a page long enough to have several. */
+.part {
+  margin: 4rem 0 0;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--rule);
+  font: 700 1.6rem/1.2 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.part span {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+/* The one sentence a page turns on. */
+p.key { margin: 1.5rem 0; font: 600 1.2rem/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+
+/* A conclusion we draw from a section: a note, but in the text colour. */
+.finding { border-left: 3px solid var(--accent); padding: 0.2rem 0 0.2rem 1rem; }
+
+/* A diagram drawn in HTML, with a caption that says what it shows. */
+.fig { margin: 1.5rem 0 2rem; font: 0.9rem/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; }
+.fig figcaption { margin-top: 0.8rem; color: var(--muted); font-size: 0.85rem; }
+.box { background: var(--card); border: 1px solid var(--rule); border-radius: 6px; padding: 0.6rem 0.8rem; }
+.box small { display: block; color: var(--muted); font-size: 0.8rem; }
+
+/* How well a function is served: the shape of the dot carries the state, not only its colour. */
+.state { display: inline-block; white-space: nowrap; font-size: 0.78rem; color: var(--muted); }
+.state::before {
+  content: "";
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  margin-right: 0.35em;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  vertical-align: -0.05em;
+}
+.state.well::before { background: currentColor; }
+.state.frag::before { background: linear-gradient(90deg, currentColor 50%, transparent 50%); }
+.state.emerging::before, .state.scarce::before { background: conic-gradient(currentColor 0 25%, transparent 0); }
+.state.scarce, .state.gap { color: var(--accent); }
+
+/* Figure 1: the five layers, with the two cross-cutting concerns beside them. */
+.layers { display: grid; grid-template-columns: 1fr auto auto; gap: 0.4rem; }
+.layers .stack { display: grid; gap: 0.4rem; }
+.layer { display: grid; grid-template-columns: 1.4rem 1fr auto; gap: 0.6rem; align-items: center; }
+.layer > b { color: var(--accent); }
+.layer.focus { border-color: var(--accent); }
+.cross { writing-mode: vertical-rl; transform: rotate(180deg); text-align: center; padding: 0.8rem 0.5rem; }
+
+/* Figure 2: four signals, and novelty set apart. */
+.signals { display: grid; grid-template-columns: repeat(4, 1fr) 1.1fr; gap: 0.4rem; }
+.signals .box { display: flex; flex-direction: column; gap: 0.3rem; }
+.signals .apart { margin-left: 0.6rem; border-style: dashed; }
+
+/* Figure 3: one result across four systems; a dashed link is one that does not exist. */
+.flow { display: grid; grid-template-columns: 1fr 1.2rem 1fr 1.2rem 1fr 1.2rem 1fr; align-items: stretch; }
+.flow .link { align-self: center; border-top: 2px dashed var(--accent); }
+.flow .bypass {
+  grid-column: 1 / 6;
+  margin: 0 16%;
+  height: 0.9rem;
+  border: 2px solid var(--fg);
+  border-top: 0;
+}
+.flow .bypass-label { grid-column: 1 / -1; margin-top: 0.3rem; font-size: 0.8rem; color: var(--muted); }
+
+/* Figure 4: the coverage map, one box per function. */
+.coverage-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr)); gap: 0.4rem; }
+.coverage-grid .state { display: block; margin-top: 0.2rem; }
+
+/* Figure 5: the three candidate architectures. */
+.arch { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+.arch .card { margin: 0; padding: 0.9rem 1rem; }
+.arch .card.chosen { border-color: var(--accent); }
+.arch svg { display: block; width: 100%; max-width: 9rem; height: auto; margin: 0.4rem auto 0.6rem; color: var(--fg); }
+.arch p { margin: 0 0 0.4rem; }
+.arch svg circle, .arch svg rect { fill: var(--card); }
+.arch svg .acc { stroke: var(--accent); }
+
+dl.glossary dt { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-weight: 600; }
+dl.glossary dd { margin: 0 0 0.9rem; }
+
+@media (max-width: 34rem) {
+  .layers, .arch { grid-template-columns: 1fr; }
+  .cross { writing-mode: horizontal-tb; transform: none; padding: 0.6rem 0.8rem; }
+  .signals { grid-template-columns: 1fr 1fr; }
+  .signals .apart { grid-column: 1 / -1; margin-left: 0; }
+  .flow { grid-template-columns: 1fr; }
+  .flow .link { justify-self: center; width: 0; height: 1.2rem; border-top: 0; border-left: 2px dashed var(--accent); }
+  .flow .bypass { display: none; }
+}
