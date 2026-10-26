@@ -6,6 +6,10 @@ project:
 website:
   title: "Human–AI Mathematics"
   site-url: https://human-ai-mathematics.github.io
+  description: "What a framework for mathematics done with AI has to do, what already exists, and a modest proposal for one part of it."
+  image: landscape/figures/card.png
+  open-graph: true
+  twitter-card: true
   navbar:
     left:
       - text: Landscape
@@ -38,6 +42,11 @@ google-scholar: true
 format:
   html:
     theme: [cosmo, assets/custom.scss]
+    include-in-header:
+      - text: |
+          <script>window.goatcounter = {path: function(p) { return location.host + p }}</script>
+          <script data-goatcounter="https://nbrosse.goatcounter.com/count"
+                  async src="https://gc.zgo.at/count.js"></script>
     from: markdown-smart
     grid:
       body-width: 720px

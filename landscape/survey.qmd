@@ -9,6 +9,8 @@ date-modified: 2026-10-26
 modified-title: "Last revised"
 aliases: [index.html]
 body-classes: landscape-page
+image: figures/card.png
+image-alt: "Mathematics with AI: a landscape in five layers. Five stacked layers, from Sources to Communication, with provenance and governance running across them."
 toc-depth: 2
 ---
 
