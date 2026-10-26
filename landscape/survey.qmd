@@ -9,6 +9,8 @@ date-modified: 2026-10-26
 modified-title: "Last revised"
 aliases: [index.html]
 body-classes: landscape-page
+image: figures/card.png
+image-alt: "Mathematics with AI: a landscape in five layers. Five stacked layers, from Sources to Communication, with provenance and governance running across them."
 toc-depth: 2
 ---
 
@@ -698,7 +700,7 @@ A separate [comparison of infrastructure architectures](architectures.qmd) consi
 :::
 ## Sources and method {#sources}
 
-**Scope.** This page is a snapshot of a survey made on 21 October 2026 by [the team](../about.qmd), using AI. Project descriptions, statuses and figures refer to that date and have not been updated since. The survey covers about 330 projects: formal tools, knowledge resources, problem collections, collaborative research, venues and institutions. Projects were included because they serve a function in this landscape and are public, active or historically important; popularity was not a criterion.
+**Scope.** This page is a snapshot of a survey made on 21 October 2026 by [the team](../about.qmd), using AI. Project descriptions, statuses and figures refer to that date and have not been updated since. The survey covers about 150 projects: formal tools, knowledge resources, problem collections, collaborative research, venues and institutions. Projects were included because they serve a function in this landscape and are public, active or historically important; popularity was not a criterion.
 
 **Checks.** Each project was read on its own page, or through its API or repository when the site blocks automated clients. A second pass checked the figures, dates and quotations against those sources, and every link on this page was tested on the survey date.
 

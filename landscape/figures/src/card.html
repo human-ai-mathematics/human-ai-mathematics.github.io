@@ -1,0 +1,32 @@
+<!doctype html>
+<!-- Social card (1200×630) for the landscape page, rendered to landscape/figures/card.png.
+
+Run from the repository root:
+google-chrome --headless --hide-scrollbars --window-size=1200,630 \
+  --screenshot=landscape/figures/card.png landscape/figures/src/card.html
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; background: #fbfaf7; }
+  body { display: flex; align-items: center; gap: 56px; padding: 0 72px; box-sizing: border-box;
+         font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color: #1d2330; }
+  .text { flex: 1; }
+  .kicker { color: #c4511a; font-size: 22px; font-weight: 700; letter-spacing: 0.04em;
+            text-transform: uppercase; margin-bottom: 20px; }
+  h1 { font-size: 54px; line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 24px; }
+  p { font-family: Georgia, "Times New Roman", serif; font-size: 26px; line-height: 1.4;
+      color: #5b6372; margin: 0; }
+  img { height: 520px; }
+</style>
+</head>
+<body>
+  <div class="text">
+    <div class="kicker">Human–AI Mathematics</div>
+    <h1>Mathematics with AI: a landscape in five layers</h1>
+    <p>About 150 projects, from sources to communication: what is well served and what is missing.</p>
+  </div>
+  <img src="../layers.svg" alt="">
+</body>
+</html>
