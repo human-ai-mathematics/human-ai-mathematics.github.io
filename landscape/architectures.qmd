@@ -4,6 +4,7 @@ subtitle: "A proposal for linking mathematical infrastructure through shared rec
 description: "Three options for connecting the mathematics-with-AI landscape: an integrated platform, a federation, or a registry for research records."
 date: 2026-10-26
 published-title: "Last revised"
+author: Nicolas Brosse
 body-classes: landscape-page
 toc-depth: 2
 ---
