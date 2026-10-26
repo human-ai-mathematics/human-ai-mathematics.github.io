@@ -1,0 +1,52 @@
+project:
+  type: website
+  output-dir: _site
+  render: ["*.qmd", "**/*.qmd", "!drafts/"]
+
+website:
+  title: "Human–AI Mathematics"
+  site-url: https://human-ai-mathematics.github.io
+  navbar:
+    left:
+      - text: Landscape
+        menu:
+          - text: Overview
+            href: landscape/survey.qmd
+          - text: Architectures
+            href: landscape/architectures.qmd
+      - text: Conjecture search
+        menu:
+          - text: Overview
+            href: conjecture-search/proposal.qmd
+          - text: How it works
+            href: conjecture-search/how-it-works.qmd
+    right:
+      - text: About
+        href: about.qmd
+  page-footer:
+    center: "Supported by [Project Numina](https://projectnumina.ai/) and the European Research Council (grant 101201229) · [About](/about.qmd)"
+
+author:
+  - Nicolas Brosse
+  - Jia Li
+  - Yuwei Lyu
+citation:
+  container-title: "Human–AI Mathematics"
+date-format: long
+google-scholar: true
+
+format:
+  html:
+    theme: [cosmo, assets/custom.scss]
+    from: markdown-smart
+    grid:
+      body-width: 720px
+    toc: true
+    toc-depth: 2
+    toc-location: right
+    toc-title: Contents
+    tbl-cap-location: bottom
+    lang: en
+
+crossref:
+  subref-labels: alpha A

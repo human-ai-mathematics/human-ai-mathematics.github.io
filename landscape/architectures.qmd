@@ -1,0 +1,72 @@
+---
+title: "Connecting the landscape: three architectures"
+subtitle: "A proposal for linking mathematical infrastructure through shared records."
+description: "Three options for connecting the mathematics-with-AI landscape: an integrated platform, a federation, or a registry for research records."
+date: 2026-10-26
+published-title: "Last revised"
+body-classes: landscape-page
+toc-depth: 2
+---
+
+The [five-layer landscape](survey.qmd) describes existing tools and the gaps between them, based on a survey dated 21 October 2026. This page asks how those components could work together. The options and recommendation below are proposals, separate from the survey's observations.
+
+## A. One integrated platform
+
+![Systems connected to one central platform.](figures/arch-a.svg){#fig-arch-a fig-alt="Systems connected to one central platform."}
+
+A single service holds problems, statements, work, evidence and views (the direction of Prove2Me on the formal side, or Euler on the research side).
+
+::: plain
+- *For*: coherent identifiers, one interface, easy to use.
+- *Against*: one operator holds the records and the logs; it competes with registries, libraries and venues that the community already trusts; its governance must address this concentration of responsibility (see [governance in the landscape](survey.qmd#governance)).
+:::
+
+## B. A federation linked by shared records
+
+![Existing systems exchanging shared records without a central platform.](figures/arch-b.svg){#fig-arch-b fig-alt="Existing systems exchanging shared records without a central platform."}
+
+Existing components stay where they are. What is standardized is a **small set of records** that every component can emit and read, kept as files under version control and pointing to each other by stable identifiers:
+
+::: steps
+1.  a **statement record**: canonical informal statement, with its crosswalk (QID, Formal Conjectures name, Lean name and `semantic_hash`, Palomar ID);
+2.  an **evidence record**: the question checked and the kind of evidence ([evidence in the landscape](survey.qmd#formal-certification)), by whom or what, on which fingerprinted version, with which independence (what the checker saw);
+3.  a **process record**: route, obstacle, refutation, abandonment, with reasons;
+4.  a **provenance record**: model, role, human steering, pointer to the run log.
+:::
+
+::: plain
+- *For*: builds on what works (`formalization.yaml`, Comparator, Palomar, Hexagon); no single owner; portable records can be preserved independently of their host, provided copies are maintained.
+- *Against*: needs agreement on formats; adoption is slow; nobody is in charge of coherence.
+:::
+
+## C. A registry for informal research records
+
+![Existing systems connected to an additional research-record registry.](figures/arch-c.svg){#fig-arch-c fig-alt="Existing systems connected to an additional research-record registry."}
+
+The informal counterpart of Palomar: versioned, citable entries for process records and informal evidence, with moderation.
+
+::: plain
+- *For*: gives process records a home and a citation (see [research records](survey.qmd#process-records)).
+- *Against*: a new institution to fund and govern; premature before formats exist.
+:::
+
+## Recommendation and first steps
+
+We favour starting with B: agreeing on shared records can proceed incrementally, and those formats would also be needed by A or C. This is a proposed direction, not an established interoperability standard. Possible first steps:
+
+::: plain
+- a `process:` extension (routes, obstacles, refutations) to `formalization.yaml`, whose schema tolerates unknown keys;
+- a comparison of the formats already used by Euler, Math Lab, labyrinth-exploration, OpenTheory and the Portolan schema, before any new one is written;
+- a mapping between the existing certification ladders (`review.status`, VibeMathed, ProofForum, Hexagon).
+:::
+
+## Open questions
+
+::: plain
+- **Who maintains the formats?** A federation has no one in charge of coherence, so each shared record needs an owner who defines and updates its format. Candidates include the Mathlib Initiative, which already maintains `formalization.yaml`; a working group, such as the Isaac Newton Institute's 2027 programme or the future Simons Math+AI institutes; or the projects that already keep such records.
+- **Who keeps the copies?** Records outlive their host only if someone else keeps copies of them: archives, libraries, or the projects themselves.
+- **Public or private?** A process record shows promising approaches before any result exists. Publishing it helps others avoid dead ends, but it can cost its authors credit, and projects may not produce records at all if they must be public. Should they be public by default?
+- **When would a registry (C) be worth building?** Once one record format is adopted by several projects, or only when those projects ask for a common place to deposit and cite their records?
+:::
+
+[Return to the landscape](survey.qmd#connections).

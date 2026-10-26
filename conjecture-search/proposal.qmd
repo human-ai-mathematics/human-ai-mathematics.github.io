@@ -1,0 +1,66 @@
+---
+pagetitle: "Conjecture search"
+title: "Conjecture search"
+subtitle: "Our modest proposal for one part of the [landscape](../landscape/survey.qmd): a sustained search, by humans and AI agents, to prove or refute one hard statement, in which every result can be trusted."
+description: "A sustained human–AI search to prove or refute one hard statement, with every status certified: principles, the KLS manuscript, the template, and what comes next."
+date: 2026-10-26
+aliases: [index.html]
+published-title: "Last revised"
+---
+
+On a hard question, agents produce proof attempts, reductions, numerical experiments and candidate counterexamples, over many sessions. Without structure, what was learned is lost between sessions, dead ends are explored again, and a convincing argument passes for a proof. Conjecture search gives that work one shared record, and a manuscript a mathematician can read and check.
+
+## Principles
+
+::: aims
+1.  **Organize the search.** One target statement, a portfolio of routes and dated checkpoints, so that many agents over many sessions work as one search.
+2.  **Make every status trustworthy.** A claim is proved or refuted only through a certification tied to the exact text examined: an independent review, or the explicit acceptance of a named person. Evidence guides the search; it never moves a status.
+3.  **Open the research to mathematicians.** The output reads like a paper, says what is settled and what is not, and shows where a reader can help.
+4.  **Spend sparingly.** Agent calls are the search's budget, and each one is launched for a result that needs it.
+:::
+
+How the pieces fit together, from the life of a statement to the ways to contribute: [**How it works**](how-it-works.html).
+
+## In the landscape
+
+Conjecture search serves one function of the [landscape](../landscape/survey.qmd): the record of the work, kept alongside a manuscript and a certification of every status. For one hard statement studied over many sessions and agents, it keeps:
+
+::: plain
+- **a record of the work:** the portfolio of routes, dated checkpoints, obstacles, and refutations counted as results;
+- **informal certification:** every status is earned by an independent review or a named person, tied to a fingerprint of the exact text examined, and reviews are append-only;
+- **a manuscript for readers:** every claim a labelled statement;
+- **a bridge to formal evidence:** a Lean repository alongside.
+:::
+
+**We are not alone.** Several projects created in 2026 also record the routes and dead ends of a search driven by AI agents: among them [Euler](https://github.com/canghaimeng/Euler), [Math Lab](https://github.com/Joe975/math-lab), [labyrinth-exploration](https://github.com/nasqret/labyrinth-exploration), [Plectis](https://github.com/wcook04/plectis-erdos) and [OpenTheory](https://github.com/kaminocorp/opentheory); the [math-research-harness](https://github.com/haruhisa-enomoto/math-research-harness) is a repository template close to ours; DeepMind's [AI co-mathematician](https://arxiv.org/abs/2605.06651) tracks failed hypotheses in a closed system. They are compared on the [landscape page](../landscape/survey.qmd#process-records). What we did not find elsewhere is the combination: a manuscript written for readers as the home of the statements, a ledger in which a refutation is a result, and certification by an independent review or a named person, on a single statement studied in depth.
+
+**What it lacks**, measured against the rest of the landscape:
+
+::: plain
+- human certification: so far its proofs are certified by agent reviews only, which every venue treats as the weakest signal;
+- an export of its ledger and portfolio in a documented format, so that other projects can read them;
+- the shared formal conventions: the `formalization.yaml` provenance file and the layout used by the [Palomar](https://palomar-registry.org/) registry, in its Lean repository;
+- a mapping of its statuses onto the certification ladders others use;
+- provenance recorded per claim, and a record of what each agent saw before it worked (an agent that has read earlier failures is not an independent check);
+- packaging as an agent skill, and a place to deposit its records of the search.
+:::
+
+**How it could plug in.** Statements could take their identity from [Formal Conjectures](https://github.com/google-deepmind/formal-conjectures) or Wikidata; formal results could go to Palomar; manuscripts to [Hexagon](https://hexagonmath.org/) or arXiv; verification of an exact version to [ProofForum](https://www.proofforum.org/); exposition to venues such as [Mathematical Discourse](https://www.mathematicaldiscourse.org/). The template would keep the part none of them holds: the record of the search. Its ledger is also close to the shared records that the landscape page proposes for a federation of tools, so it could serve as one test of them.
+
+## Searches and template
+
+::: card
+### [The KLS theorem and its methods](../kls-conjecture-search/)
+
+A manuscript on the KLS conjecture, now a theorem: a complete account of the three recent proofs, a comparison of them, and alternative mechanisms for the dimension-free Poincaré bound, produced by a sustained human–AI search. Each statement shows who checked it. Begun as a search for a proof, it has become a consolidation of the field around the theorem.
+:::
+
+::: card
+### [Conjecture search template](https://github.com/human-ai-mathematics/conjecture-search-template)
+
+The reusable research harness behind the KLS manuscript, with no mathematics in it: a MyST manuscript, a ledger of claims and their certifications, and researcher, reviewer and writer agents. Start a new search from it.
+:::
+
+## What's next
+
+KLS was proved while we were working on it, so the template has not yet been tested from start to finish on a question that stays open. That is our next step: run it on an open conjecture, not yet chosen, and learn whether it is pleasant for mathematicians to read, check and contribute to, whether it is efficient for what it costs, and how it should change. If you have a conjecture to propose, or would like to take part, say so in the [discussions](https://github.com/orgs/human-ai-mathematics/discussions), or write to nicolas.brosse \[at\] ensae.fr.

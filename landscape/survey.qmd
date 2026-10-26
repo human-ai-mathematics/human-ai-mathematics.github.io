@@ -1,0 +1,707 @@
+---
+pagetitle: "The landscape of mathematics with AI"
+title: "Mathematics with AI: a landscape in five layers"
+subtitle: "Finding knowledge, conducting research, assessing results and making them usable: the tools and the connections between them."
+description: "A map of mathematics with AI in five layers: sources, statements, research, evidence and communication. Survey dated 21 October 2026."
+date: 2026-10-21
+published-title: "Survey date"
+date-modified: 2026-10-26
+modified-title: "Last revised"
+aliases: [index.html]
+body-classes: landscape-page
+toc-depth: 2
+---
+
+<span id="purpose"></span>
+<span id="in-brief"></span>
+
+Mathematical research leaves more than a proof. It starts from existing knowledge, gives precise form to a question, explores possible approaches, and produces an argument that others must check and understand. AI makes the organization of this work increasingly important: a result is useful only if someone can find it, assess what it establishes and build on it.
+
+This page maps the tools that support those activities. For example, a problem registry helps identify a question, while a record of failed approaches helps the next investigation continue. A formal proof provides evidence of correctness, while an explanation helps a reader understand the result. These are connected needs, often served by different systems.
+
+<span id="layers"></span>
+<span id="unified-view"></span>
+<span id="coverage"></span>
+
+The five layers below group **functions**, not projects or levels of maturity. A project can serve several layers, and research moves back and forth between them. Provenance and governance apply throughout. Read the introductions and closing assessments for an overview; expand the inventories for more projects and technical detail.
+
+![Five layers of mathematical infrastructure, with provenance and governance running across them.](figures/layers.svg){#fig-layers fig-alt="Five equally styled boxes, from bottom to top: Sources, Statements, Research, Evidence and Communication. Two vertical bars represent provenance and governance."}
+
+<span id="detail"></span>
+<span id="landscape"></span>
+
+## 1. Sources — Finding problems and existing knowledge {#sources-problems}
+
+*What can an investigation start from?*
+
+Problems, papers, examples and formal libraries are different kinds of starting material. They must be found before they can be used: a search that misses an existing result can spend its effort rediscovering it.
+
+### Problems and conjectures
+
+Problem collections differ in how questions enter them and in who keeps their status up to date. [Erdős Problems](https://www.erdosproblems.com/) is maintained by an editor, with stable problem numbers and discussion. [Formal Conjectures](https://github.com/google-deepmind/formal-conjectures) states its questions in Lean. [Large Math Initiative](https://largemath.org/) extracts problems from papers on a much larger scale; each problem is meant to have a named academic owner, but at the survey date most had none.
+
+<details>
+<summary>Problem collections, benchmarks and bounds trackers</summary>
+
+The collections are grouped by who builds them: people, projects built for or by AI, and trackers of numerical bounds.
+
+**Registries curated by people**
+
+::: plain
+- **[Erdős Problems](https://www.erdosproblems.com/)** (T. Bloom): 1,221 numbered problems, with a forum. On 6 October 2026 it dropped its open/solved statuses, froze proof claims, and asked for Lean proofs to be registered on Palomar.
+- **[teorth/erdosproblems](https://github.com/teorth/erdosproblems)**: the YAML database behind the site. A formal solution keeps its informal status until it has been "digested by a human reader", so a problem can be listed as "open (Lean)".
+- **Other edited registries**: the [Kourovka Notebook](https://arxiv.org/abs/1401.0300) (group theory; v49, 20 October 2026), [TOPP](https://topp.openproblem.net/) (computational geometry), the [AIM problem lists](https://aimath.org/problemlists/), [Ben Green's 100 open problems](https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf), and the [MathOverflow `open-problems`](https://mathoverflow.net/questions/tagged/open-problems) tag.
+:::
+
+What this shows: registries with named editors were active at the survey date. On [Open Problem Garden](https://www.openproblemgarden.org/), which names no editor, most recent activity on 21 October 2026 was spam.
+
+**Registries built for or by AI**
+
+::: plain
+- **[Formal Conjectures](https://github.com/google-deepmind/formal-conjectures)** (Google DeepMind): 4,137 Lean statements; per its documentation, 1,514 open, 2,623 solved and 1,012 formally proved. It uses AI provers to expose badly stated problems, and recommends linking research proofs to Palomar.
+- **[Large Math Initiative](https://largemath.org/)**: 114,879 open problems on its front page (125,434 under "Browse all"), mostly extracted automatically from papers. Two AI judges assess each proposed solution. Each problem is meant to have a named academic "owner"; most are still marked "Needs an owner". The site does not say who runs it.
+- **[We-Solve](https://we-solve.github.io/contribute/)**: an archive of research problems with a strict disclosure rule: every human and model involved, with versions, settings and time budgets.
+- **Benchmarks and challenges**: [FrontierMath: Erdős](https://epoch.ai/latest/announcing-frontiermath-erdos) and [FrontierMath: Open Problems](https://epoch.ai/frontiermath/open-problems) (Epoch AI); [First Proof](https://1stproof.org/), which uses blind human refereeing and releases its referee reports and system logs; the [AlphaEvolve repository of problems](https://github.com/google-deepmind/alphaevolve_repository_of_problems).
+:::
+
+**Bounds and constants trackers**
+
+::: plain
+- **[Optimization Constants in Mathematics](https://teorth.github.io/optimizationproblems/)** (Davis, Ivanisvili, Tao): 117 constants with their best known bounds. An asterisk marks bounds that are only weakly verified.
+- **Also**: [Leaps in Bounds](https://leapsinbounds.org/) and [ANTEDB](https://teorth.github.io/expdb/) (exponents in analytic number theory) track best known bounds.
+:::
+
+</details>
+
+### Literature and search
+
+[zbMATH Open](https://api.zbmath.org) maintains a bibliography of mathematics, and [Semantic Scholar](https://www.semanticscholar.org) offers another way into the literature. [TheoremSearch](https://www.theoremsearch.com) searches statements rather than papers. Retrieval finds relevant material; it does not by itself show that a claim is new, or that it is equivalent to another one.
+
+<details>
+<summary>Bibliographic resources and knowledge graphs</summary>
+
+::: plain
+- **[zbMATH Open](https://api.zbmath.org)**: an open, maintained bibliography of mathematics. Its [knowledge graph](https://github.com/zbMATHOpen/zbmath-open-kg) (168M triples, CC BY-SA) publishes it as linked data.
+- **Also**: [arXiv](https://arxiv.org) (preprints), the [MaRDI](https://portal.mardi4nfdi.de/wiki/Portal) portal (mathematical research data), [Semantic Scholar](https://www.semanticscholar.org) (literature search).
+- **Search in formal libraries**: LeanSearch, Loogle and [LeanExplore](https://github.com/lean-explore/lean-explore) search Lean libraries. They appear here as retrieval tools; their use inside an agent workflow is described under [proofs and formalizations](#agent-tooling).
+:::
+
+</details>
+
+### Mathematical objects and examples
+
+[LMFDB](https://www.lmfdb.org), [OEIS](https://oeis.org) and [π-Base](https://topology.pi-base.org) organize mathematical objects and examples rather than papers. They supply test cases for conjectures and candidates for counterexamples. Their curation policies also decide whether, and how, an investigation can contribute its results back.
+
+<details>
+<summary>Object databases and contribution policies</summary>
+
+::: plain
+- **[LMFDB](https://www.lmfdb.org)** (L-functions and modular forms): agents can query it through a read-only [MCP](#glossary-mcp) server.
+- **[OEIS](https://oeis.org)** (integer sequences): its policy, approved 29 August 2026, requires a responsible human author and forbids AI authorship, AI-written comments and bulk AI submissions.
+- **[π-Base](https://topology.pi-base.org)**: topological spaces and their properties.
+- **Also**: [House of Graphs](https://houseofgraphs.org) (graphs), [CatDat](https://catdat.app) (categories), [FindStat](https://www.findstat.org) (combinatorial statistics). [MathBases](https://mathbases.org) indexes such databases.
+:::
+
+</details>
+
+### Formal libraries
+
+[Mathlib](https://mathlib.org/) supplies definitions and theorems that a Lean development can reuse. The [Isabelle AFP](https://isa-afp.org/) is a refereed archive for another proof assistant. [Tau Ceti](https://taucetiproject.org/) works differently: agents write and review code against targets and review rubrics written by people.
+
+On this page, libraries count as sources of reusable mathematics. How they check contributions belongs to [Evidence](#formal-certification); who answers for those contributions belongs to [Governance](#governance).
+
+<details>
+<summary>Libraries, formalization collections and contribution models</summary>
+
+Libraries differ above all in how they accept formal code written by AI. The survey found three models.
+
+**People review every contribution**
+
+::: plain
+- **[Mathlib](https://mathlib.org/)**: 139,524 definitions and 291,055 theorems, per its stats page. People review every contribution, and AI use must be disclosed. It is supported by the [Mathlib Initiative](https://mathlib-initiative.org/).
+:::
+
+**People set the targets, agents write and review**
+
+::: plain
+- **[Tau Ceti](https://taucetiproject.org/)**: people write the targets and the review rubrics; agents write the code and review it. It reports 17,621 reviewed pull requests between 22 July and 21 October 2026.
+- **[Formal Frontier](https://github.com/orgs/FormalFrontier/repositories)**: agents write libraries from source texts; according to the Xena post, AI reviews them.
+:::
+
+**Automatic merge, no review**
+
+::: plain
+- **[merely-true](https://github.com/merely-true/merely-true)**: contributions are merged automatically, gated by the contributor's reputation, with no review.
+- **[Lean Pool](https://github.com/LeanPool/lean-pool)**: 316 projects and about 11.8M lines, self-reported. It describes itself as sitting "between mathlib and merely-true".
+:::
+
+**Formalizations outside libraries**
+
+::: plain
+- **[Anthropic's FLT formalization](https://github.com/anthropics/fermats-last-theorem)**: about 13M lines in 11 days, "written to be checked rather than read".
+- **[ATLAS](https://github.com/facebookresearch/atlas-lean)** (Meta): formalizations of 26 textbooks.
+- **Also in Lean**: [OddOrder](https://github.com/yawara/odd-order), [Hex](https://github.com/leanprover/hex).
+:::
+
+**Other proof assistants.** The formal side is not Lean-only:
+
+::: plain
+- **[Isabelle AFP](https://isa-afp.org/)**: a refereed archive organized as a journal.
+- **[MathComp](https://math-comp.github.io/)**: a library for the Rocq proof assistant.
+- **[Metamath](https://us.metamath.org/)**: checked by five independent verifiers.
+- **[HOL Light](https://github.com/jrh13/hol-light)**: on 20 October 2026, it added four autoformalizations produced by Claude.
+:::
+
+</details>
+
+::: finding
+**Available:** substantial collections of problems, literature, examples and formal mathematics. **Still difficult:** searching across collections and reconciling their identifiers and statuses. Agents can read some of these resources but rarely contribute to them: the LMFDB interface in the survey is read-only, and contributing corrections remains a separate workflow.
+:::
+
+## 2. Statements — Identifying claims and their connections {#statements-identity}
+
+*What exactly is being claimed, and how does it relate to other claims?*
+
+A paper may contain many statements, and two papers may state the same theorem differently. This layer makes claims addressable, records how they depend on one another, and connects informal statements to their formal versions.
+
+### Statements and definitions
+
+[TheoremGraph](https://arxiv.org/abs/2606.25363) and [Matlas](https://matlas.ai) extract statements from the literature at scale. Extraction makes a large body of mathematics searchable, but a reader still needs to know which definitions and hypotheses apply, whether the statement is only conjectured, and whether two statements that look alike really mean the same thing.
+
+<details>
+<summary>Statement extraction: scale and limitations</summary>
+
+Three systems extract statements at scale:
+
+::: plain
+- **[TheoremSearch](https://www.theoremsearch.com)**: 8.4M theorems indexed, which can be queried through a REST API and an MCP server.
+- **[TheoremGraph](https://arxiv.org/abs/2606.25363)**: 11.7M statements and 18.3M candidate links between them. An LLM judge accepted 47,952 matches between arXiv statements and Lean declarations.
+- **[Matlas](https://matlas.ai)**: 8.07M statements from journals and textbooks.
+:::
+
+What this shows: the survey did not find, in these systems, comprehensive removal of duplicates, curation of status (proved, conjectural, refuted), or human checking of the extracted links.
+
+</details>
+
+### Dependencies and reductions
+
+A **blueprint** is the plan of a formalization: it links statements and their dependencies to code, so that completed and remaining work is visible. [leanblueprint](https://github.com/PatrickMassot/leanblueprint) is the usual tool for it. [IEANTN](https://github.com/teorth/IEANTN) works differently: it audits a body of literature through conditional theorems and their justifications, and records verification receipts separately from the claims.
+
+<details>
+<summary>Dependency graphs and blueprint tools</summary>
+
+**Claim graphs**
+
+::: plain
+- **[IEANTN](https://github.com/teorth/IEANTN)** (Tao): audits the dependencies of a literature rather than recording a search. Each node is a conditional theorem, and its justification is stored as metadata. Verification receipts are written by the verifier, never by the author. Fingerprints make a change of meaning visible as a diff, and contributors claim tasks through a bot.
+:::
+
+**[Blueprints](#glossary-blueprint)**
+
+::: plain
+- **[leanblueprint](https://github.com/PatrickMassot/leanblueprint)**: the de facto standard, with no commits since December 2025.
+- **[Verso Blueprint](https://github.com/leanprover/verso-blueprint)**: a blueprint tool built on Verso, Lean's documentation system.
+- **[LeanArchitect](https://github.com/hanwenzhu/LeanArchitect)**: exports a blueprint in machine-readable form.
+- **[Lean Atlas / Lean Compass](https://github.com/NyxFoundation/lean-atlas)**: reduces by 27–99 % the number of nodes a person must check for faithfulness.
+- **[KnowTeX](https://arxiv.org/abs/2601.15294)**: builds dependency graphs from LaTeX sources.
+:::
+
+</details>
+
+### Identifiers and correspondences
+
+The [Stacks Project](https://stacks.math.columbia.edu) gives statements permanent tags. [Wikidata](https://www.wikidata.org) supplies shared identifiers, called QIDs, and Mathlib cross-references link its declarations to outside resources. Together, these links begin a **crosswalk**: a table of correspondences between the identifiers of different systems.
+
+Identity needs care. A fingerprint of a formal declaration can survive renaming, but that alone does not recognize every mathematically equivalent formulation.
+
+<details>
+<summary>Identifiers, cross-references and formal fingerprints</summary>
+
+::: plain
+- **[Stacks Project](https://stacks.math.columbia.edu)**: permanent tags for statements. Since October 2026 it hosts comments signed by an AI agent working for a named person, which report misstatements found while formalizing.
+- **[Kerodon](https://kerodon.net)**: an online text on categorical homotopy theory, with tags in the style of the Stacks Project.
+- **[Wikidata](https://www.wikidata.org)**: QIDs for concepts and theorems. A new property, P14534 "Mathlib Declaration ID", was added in June 2026.
+- **Mathlib's [cross-reference attributes](https://github.com/leanprover-community/mathlib4/blob/master/Mathlib/Tactic/CrossRefAttribute.lean)**: since May 2026, they link Mathlib declarations to Stacks, Kerodon, Wikidata, LMFDB, π-Base, DLMF and OEIS.
+- **[1000+ theorems](https://1000-plus.github.io)**: a list of theorems keyed by QID.
+- **[`semantic_hash`](https://github.com/mathlib-initiative/semantic_hash)**: hashes of Lean constants that do not change when a constant is renamed.
+:::
+
+</details>
+
+::: finding
+**Available:** large statement indexes, curated identifiers and explicit dependency graphs. **Still difficult:** maintaining the meaning, status and identity of a claim across systems. The survey found useful pairwise links, but no general crosswalk joining informal claims, formal declarations and registry entries.
+:::
+
+## 3. Research — Organizing work and preserving attempts {#research}
+
+*How can an investigation be continued by someone who did not take part in it?*
+
+Research produces intermediate claims, examples, failed approaches and unresolved obstacles. Tools in this layer help carry out that work, and keep enough of it for others to continue.
+
+### Explore possible approaches
+
+[AlphaEvolve](https://github.com/google-deepmind/alphaevolve_results) generates and improves candidates by evolutionary search. Other systems use agents to propose arguments, test hypotheses and criticize partial solutions. For an investigation that someone else will continue, what matters is what is kept: a final candidate, a selection of attempts, or a record of why routes were abandoned.
+
+<details>
+<summary>Published exploration traces and their limits</summary>
+
+Published traces fall into three groups: records of collaborations led by people, what labs choose to publish, and records already at risk.
+
+**Records of collaborations led by people**
+
+::: plain
+- **Tao's [tenth-discriminant challenge](https://terrytao.wordpress.com/2026/10/20/an-experimental-ai-math-challenge-using-tenth-discriminant-bounds-to-explore-arguments-ruling-out-siegel-zeroes/)** (20 October 2026): welcomes negative results and asks that AI output be checked by an independent tool. Its record, however, is the comment thread.
+- **[Polymath plus AI](https://gilkalai.wordpress.com/2026/04/03/polymath-plus-ai/)** (Kalai, Hajaj, Kaminer): collects suggestions from people and AI as blog comments, with no record of which were tested or rejected.
+- **[Equational Theories Project](https://teorth.github.io/equational_theories/)**: its paper calls the project's blueprint "the only comprehensive record" of the techniques used.
+:::
+
+**What labs publish**
+
+::: plain
+- **Anthropic's [zeta result](https://www.anthropic.com/research/riemann-zeta)**: reports about 650 ideas tried in a first attempt, "none of which worked", and publishes transcripts.
+- **OpenAI's [openai/math](https://github.com/openai/math)**: abridged reasoning summaries for 10 of 372 families, and a history of withdrawals; nothing on the failed problems among about 4,000 posed.
+- **The [AlphaEvolve problem repository](https://github.com/google-deepmind/alphaevolve_repository_of_problems)**: has a "worse than literature bound" status, the only negative category we found on the lab side.
+:::
+
+What this shows: publication of process is selective. The community wiki on AI contributions to Erdős problems states that negative results are under-reported.
+
+**Records at risk**
+
+At the survey date, the Polymath wiki returned a 404 error, and Woeginger's list of claimed P-vs-NP proofs a 503 error. These responses alone do not show whether their contents are permanently lost.
+
+</details>
+
+### Develop proofs and formalizations {#agent-tooling}
+
+[Prove2Me](https://prove2.me/) coordinates formalization work through missions, and checks contributions on its server. [LeanFlow](https://github.com/epfl-lara/LeanFlow) combines proof work with a memory of failed attempts and evidence from each run. The common pattern is to divide a development into statements, assign the work, and check each contribution before incorporating it.
+
+A **harness** is the software that controls an agent's tools, context and stopping conditions. Interfaces such as MCP let the agent call a proof assistant or a database; hosted environments supply the computing around it. These mechanisms support the research; they do not replace its mathematical checks.
+
+<details>
+<summary>Proof services, coordination tools and computing environments</summary>
+
+**Formal coordination platforms**
+
+The platforms in the survey share a design. A graph of Lean statements is the system of record. Worker and reviewer agents each work under a contract limited to their task. [CI](#glossary-ci) checks gate every contribution, and the faithfulness of a statement is checked before anyone tries to prove it.
+
+::: plain
+- **[Prove2Me](https://prove2.me/)**: splits a formalization into missions and checks each contribution on its server. A reduction to sub-statements that are still open is accepted as a sketch (`SKETCH_ACCEPTED`). Agents with a fresh context, who did not see the work, re-read each statement blind. It was the coordination layer of Anthropic's FLT formalization.
+- **[LeanFlow](https://github.com/epfl-lara/LeanFlow)**: keeps a memory of failed attempts and the evidence of each project's runs.
+- **Also**: [Archon / Archon Horizon](https://github.com/frenzymath/Archon-Horizon), [LeanMarathon](https://github.com/YuanheZ/LeanMarathon), [`tend` and `pod`](https://github.com/mathlib-initiative/tend) (Mathlib Initiative), the [Tau Ceti](https://taucetiproject.org/) workers, [OpenGauss](https://github.com/math-inc/OpenGauss).
+:::
+
+**Provers and proof services**
+
+::: plain
+- **From companies**: [Aristotle](https://aristotle.harmonic.fun/) (Harmonic), [Gauss](https://www.math.inc/gauss) (Math Inc.), [AXLE](https://axle.axiommath.ai/) (Axiom).
+- **From Google DeepMind**: the [AlphaProof Nexus results](https://github.com/google-deepmind/alphaproof-nexus-results), and [Aletheia](https://github.com/google-deepmind/superhuman), which publishes its raw prompts and responses.
+- **Open provers**: DeepSeek-Prover, Goedel-Prover, Kimina, Seed-Prover.
+- **Evolutionary search**: [AlphaEvolve](https://github.com/google-deepmind/alphaevolve_results), [OpenEvolve](https://github.com/algorithmicsuperintelligence/openevolve), [ShinkaEvolve](https://github.com/SakanaAI/ShinkaEvolve).
+:::
+
+**Interfaces for agents**
+
+::: plain
+- **Access to Lean, databases and computer algebra**: [lean-lsp-mcp](https://github.com/oOo0oOo/lean-lsp-mcp), [lean-beam](https://github.com/leanprover/lean-beam) (Lean FRO), [LeanExplore](https://github.com/lean-explore/lean-explore), TheoremSearch MCP, [MathModDB MCP](https://github.com/MaRDI4NFDI/MathModDB-MCP), [Wolfram MCP](https://www.wolfram.com/artificial-intelligence/mcp/), and [MCP](#glossary-mcp) servers for SageMath.
+- **Skill packs**: [lean4-skills](https://github.com/cameronfreer/lean4-skills), [LeanAutoformalizationSkills](https://github.com/scottnarmstrong/LeanAutoformalizationSkills).
+:::
+
+**Hosted environments**
+
+::: plain
+- **[SAIR Open Math OS](https://www.openmathmodel.org/)** (soft launch 16 October 2026): open-weight models, and a machine running 24/7 for each project, with Lean, Mathlib, SageMath and PARI/GP. In team accounts, members see each other's prompts.
+:::
+
+**Harness optimization**
+
+::: plain
+- **[Harness²](https://github.com/google-research/harness2)** (Google Research): tunes an agent's [harness](#glossary-harness) against recorded runs. It is not specific to mathematics.
+:::
+
+</details>
+
+### Coordinate work and retain its history {#process-records}
+
+[Euler](https://github.com/canghaimeng/Euler) keeps track of goals, routes and blockers, and passes earlier failures on to later tasks. [Math Lab](https://github.com/Joe975/math-lab) records failed attempts, and compares agents that have seen them with agents that have not. [labyrinth-exploration](https://github.com/nasqret/labyrinth-exploration) organizes work as proved paths, refutations and open directions.
+
+These systems keep a **process record**: a structured account of what was tried, and why it succeeded, failed or remains open. The useful unit is an approach with its reasons, not an unfiltered conversation log.
+
+<details>
+<summary>Comparison of research-memory systems and repository templates</summary>
+
+The table compares systems that keep a research memory: what they record, and what sets each apart.
+
+::: table-wrap
+| project | research memory | distinctive feature |
+| ---- | ---- | ---- |
+| [Euler](https://github.com/canghaimeng/Euler) ([paper](https://arxiv.org/abs/2610.19864), 14 Oct 2026) | goals, live routes and blockers; each task receives the "prior failures"; a step closes only when evidence of the level set in its contract is registered | interactive dashboard; non-commercial licence |
+| [math-god](https://github.com/managed-kortix/math-god-adfd91b6-ff4b-48dd-aca6-d0bdeb719003) | for each problem, `prompt.md`, `plan.md`, `notebook.md` and `attempts/`, one file per approach ("why it lived or died"); its Millennium Prize programme adds `routes.md` and `audit.md`, one main line of attack and bounded scouting attempts | covers many problems |
+| [Math Lab](https://github.com/Joe975/math-lab) | attempts "including, especially, the failed ones"; dead ends; `refuted_by` links; gaps | **blind versus informed agents**, enforced in CI, to test whether knowing earlier failures helps or anchors |
+| [Plectis](https://github.com/wcook04/plectis-erdos) | argument frontier, claims, ledger corrections, statement migrations, failed approaches | many JSON indices and ledgers |
+| [open-problems](https://github.com/dpreil-ydlp/open-problems) | negative results; candidate problems, and why each was or was not attempted | AI attribution per role |
+| [structured-math-research](https://github.com/Caie777/structured-math-research) | claims, proofs, gaps, failed attempts | prototype |
+| [labyrinth-exploration](https://github.com/nasqret/labyrinth-exploration) (B. Naskręcki) | a map of proved corridors, refuted walls and open doors; claims in tiers T1–T6; "a refutation counts as progress" | a skill, not a repository contract |
+| [OpenTheory](https://github.com/kaminocorp/opentheory) | append-only ledger ("dead ends are recorded, not deleted"); the actor of each contribution is recorded | hosted app |
+| [AI co-mathematician](https://arxiv.org/abs/2605.06651) (Google DeepMind) | "tracks failed hypotheses"; version history of claims | closed system |
+:::
+
+**Also relevant**
+
+::: plain
+- **[QED](https://github.com/proofQED/QED)**: records each round of proof attempts.
+- **[math-research-harness](https://github.com/haruhisa-enomoto/math-research-harness)**: a repository template, with files in git, a contract for the agent, and a ledger per thread.
+- **[conjecture-prover](https://github.com/RealInsistWu/conjecture-prover)**: a Codex skill with a proof contract, a registry of routes and a dependency graph; nothing persists between sessions.
+- **[claude-math-research-skill](https://github.com/OctopusTide/claude-math-research-skill)**: checks a list of known obstacles *before* launching an attempt.
+:::
+
+</details>
+
+::: finding
+**Available:** several systems explicitly preserve attempts, obstacles and refutations. **Still difficult:** transferring that memory between projects and keeping it available over time. The survey found no shared exchange format among these systems; the [Portolan Negative-Results Record](https://github.com/portolansoft/nrr), outside mathematics, offers a related schema to examine.
+:::
+
+## 4. Evidence — Assessing what a result establishes {#formal-certification}
+
+*What has been checked, on which statement, and by whom?*
+
+<span id="tbl-signals"></span>
+<span id="verified"></span>
+<span id="certification-kinds"></span>
+
+“Verified” packs too much into one word to answer this question. Formal correctness, fidelity to the intended statement, review of an argument and novelty are different questions. People and automated reviewers can contribute to several of these checks; who they are, what they checked and how independent they were should be recorded separately.
+
+### Formal correctness
+
+A proof assistant's **kernel** checks a proof against a formal statement. The guarantee is precise, but relative to the definitions and assumptions used. [Comparator](https://github.com/leanprover/comparator) checks that a submitted proof proves the trusted statement and not another one. [Palomar](https://palomar-registry.org/) registers versioned formal results, so that one can refer to the exact artifact that was checked.
+
+<details>
+<summary>Formal certificates and their components</summary>
+
+Within six months, a standard set of files emerged for certifying a formal result:
+
+::: plain
+- `Challenge.lean`: the trusted statement;
+- `Solution.lean`: the proof;
+- `comparator.json`: read by Comparator, which checks that the proof proves exactly the trusted statement;
+- [`formalization.yaml`](#glossary-formalization-yaml): the provenance metadata;
+- `lake check` and [nanoda](https://github.com/ammkrn/nanoda_lib), an independent checker: the checks themselves.
+:::
+
+The result is then registered under a versioned [Palomar](https://palomar-registry.org/) ID. This stack is used by Anthropic's [formal-math](https://github.com/anthropics/formal-math), openai/math, Formal Frontier, [LeanEval](https://lean-lang.org/eval/) and Palomar itself, which held 690 results across 557 projects on 21 October 2026. [Comparator](https://github.com/leanprover/comparator) is now part of Lean core.
+
+</details>
+
+### Statement faithfulness
+
+Suppose someone wants to prove Goldbach's conjecture but, by mistake, formalizes only the claim for even numbers from 4 to 1,000. Lean can accept a correct proof of that bounded claim: the kernel check passes, yet the conjecture has not been proved. (This is an illustration, not a reported case.)
+
+**Faithfulness** asks whether the formal statement expresses the intended mathematics. The [Annals Challenge](https://github.com/ImperialCollegeLondon/AnnalsChallenge) gives a concrete warning: according to the survey, AI audits found formalization mistakes in 11 of 50 statements that experts had written and reviewed. Human review and automated read-backs can both address this question; proving the target as given does not settle it.
+
+<details>
+<summary>Faithfulness audits and screening tools</summary>
+
+::: plain
+- **[Annals Challenge](https://github.com/ImperialCollegeLondon/AnnalsChallenge)**: 50 hand-written statements of results from the Annals. After expert review, AI audits found formalization mistakes in 11 of them.
+- **["Faults in Our Formal Benchmarking"](https://arxiv.org/abs/2606.29493)**: 398 mechanically certified defects in five benchmarks.
+- **[Definition grounding](https://arxiv.org/abs/2610.19223)**: 25–50 % of the sets of definitions formalized by agents were compatible with later statements.
+- **[leanscreen](https://github.com/ibrahimmian36/leanscreen)**: a screening tool that "may only reject": it can flag a statement, not certify it.
+- **Also**: [FLMF](https://arxiv.org/abs/2610.20573).
+:::
+
+</details>
+
+### Review of mathematical arguments
+
+[ProofForum](https://www.proofforum.org/) attaches reviews to a theorem in an exact version, and keeps AI, community and certified-referee signals apart. [First Proof](https://1stproof.org/) uses blind human refereeing. [Pith](https://pith.science) publishes automated reviews of preprints, which it describes as no substitute for expert scrutiny.
+
+A review should say what was read, which questions were examined, and what the reviewer had seen beforehand. Agents that share the same earlier critique and then agree do not provide the evidence of an independent examination. A named human review and an automated review should stay distinguishable, even when they address the same question.
+
+<details>
+<summary>Review protocols and evidence labels</summary>
+
+**Review protocols**
+
+::: plain
+- **[ProofForum](https://www.proofforum.org/)**: reviews each theorem in an exact version, with four separate signals: an AI check, community checks, a consensus of five institutional referees, and a signed verdict by a certified referee.
+- **[First Proof](https://1stproof.org/)**: blind refereeing on a four-level scale (flawless, minor, major, reject), per its second-batch page.
+- **[Pith](https://pith.science)**: automated public reviews of about 398,000 preprints, "no substitute for expert scrutiny".
+:::
+
+**Evidence labels**
+
+Existing labels use different vocabularies: VibeMathed's levels, the review status in `formalization.yaml`, ProofForum's signals, Hexagon's labels, and the [ACL survey's evidence ladder](https://aclanthology.org/2026.bigpicture-main.2). Comparing them requires keeping what each check covered and who did it, rather than treating every label as a rung on one common scale.
+
+</details>
+
+### Novelty and prior work {#novelty}
+
+A correct result may already be known. Palomar explicitly does not judge novelty, so a formal certificate cannot replace a check of the literature. The [aimath index](https://aimath.robertj1.com/) includes a claim audit, and Large Math Initiative records a literature status. These are useful first signals, but the survey found no shared process for certifying novelty.
+
+<details>
+<summary>Prior-art fields and literature checks</summary>
+
+Fields and checks recorded by the survey:
+
+::: plain
+- **The community wiki on AI contributions to Erdős problems**: classifies each contribution as AI standalone, alongside literature, building on literature, or with humans.
+- **Large Math Initiative**: a "literature status" for each problem.
+- **The [aimath index](https://aimath.robertj1.com/)**: a "claim audit".
+- **Anthropic**: reports that subagents checked 54 arXiv papers.
+- **[Cited by AGI](https://citedbyagi.com/)**: ranks the human authors cited by the OpenAI manuscripts.
+:::
+
+</details>
+
+::: finding
+**Available:** formal checking and several forms of human and automated review. **Still difficult:** making the scope of each check explicit and comparable. The survey found no shared structured record for faithfulness reviews or reviewer independence; novelty assessment remains separate from proof checking.
+:::
+
+## 5. Communication — Making mathematics readable and reusable {#venues}
+
+*How does a result become something another mathematician can read, cite and use?*
+
+A checked artifact, an understandable explanation and a citable deposit serve different purposes. This layer is about how mathematics reaches its readers, including the editorial work that selects and presents it.
+
+### Explanation and synthesis
+
+[The Bourgain Project](https://bourgain-pedia.com/) writes digestions of difficult papers. [Mathematical Discourse](https://www.mathematicaldiscourse.org/) reviews mathematical exposition in video. [oai-math-revised](https://github.com/mathcommunity/oai-math-revised) improves the exposition of mathematics produced by AI. Each treats understanding as work in its own right.
+
+<details>
+<summary>Exposition projects and editorial expectations</summary>
+
+::: plain
+- **[The Bourgain Project](https://bourgain-pedia.com/)**: a bibliography of 523 papers and, so far, 18 digestions. Its rule: "If a step in Bourgain's paper could not be verified, the digestion should say so plainly". AI use must be disclosed.
+- **[Mathematical Discourse](https://www.mathematicaldiscourse.org/)**: a video [overlay journal](#glossary-overlay); it reviews exposition, not correctness.
+- **[oai-math-revised](https://github.com/mathcommunity/oai-math-revised)**: a community overlay that improves the OpenAI write-ups.
+- **Also**: the [Paper of the Future Prize](https://amathr.org/prizes/paper-of-the-future-prize/), and Tao's digestion posts.
+:::
+
+</details>
+
+### Deposit and citation
+
+[arXiv](https://arxiv.org) is the familiar place to deposit manuscripts. [Hexagon](https://hexagonmath.org/) separates deposit from peer review, and asks for labels on the origin of the text and on human understanding. A deposit makes work accessible and citable; readers still need to inspect the evidence attached to it.
+
+<details>
+<summary>Depositories, labels and submission policies</summary>
+
+::: plain
+- **[arXiv](https://info.arxiv.org/help/moderation/index.html)**: requires disclosure of significant AI use and, from 1 October 2026, limits each submitter to two new submissions per month.
+- **[Hexagon](https://hexagonmath.org/)**: open since 28 September 2026, with no peer review. Two labels are mandatory: text origin and **human understanding**. It offers a REST API and an MCP endpoint.
+- **Also**: [Annals of Formalized Mathematics](https://afm.episciences.org/).
+:::
+
+</details>
+
+### Publication and editorial selection
+
+[Annals of Formalized Mathematics](https://afm.episciences.org/) and the refereed [Isabelle AFP](https://isa-afp.org/) are venues built around formal mathematics. A venue's review policy determines which submissions it can assess and endorse; the kinds of evidence involved are described under [Evidence](#formal-certification).
+
+Capacity is also part of this landscape. The survey records journals pausing submissions and proposals for new venues, alongside efforts to make exposition and human understanding visible.
+
+<details>
+<summary>Journal initiatives and review capacity</summary>
+
+::: plain
+- **A planned journal requiring Lean-verified proofs** (Guo et al., announced on [Tao's blog, 17 October](https://terrytao.wordpress.com/2026/10/17/starting-a-new-journal/)): it has not said how it will check the statements themselves.
+- **Six probability and statistics journals** [paused submissions](https://www.edpsciences.org/en/news-highlights/3058-esaim-probability-and-statistics-takes-action-to-address-increasing-manuscript-submissions) from 19 October to 8 November 2026, citing the volume of AI-driven submissions.
+:::
+
+</details>
+
+::: finding
+**Available:** distinct venues for deposit, review and exposition. **Still difficult:** connecting those services and accommodating research that has not produced a finished theorem. The survey did not identify a dedicated venue for reviewed, citable route reports or obstacle notes.
+:::
+
+## Across the layers: provenance and governance {#across-layers}
+
+### Attribution and traceability {#provenance}
+
+*Who or what produced each contribution, and how?*
+
+[`formalization.yaml`](https://github.com/mathlib-initiative/formalization.yaml) records the sources, automation, models and review of a formalization. Hexagon's labels and the [LMS AI Declaration](https://www.lms.ac.uk/publications/policies/AI) address disclosure in publications. These practices make the roles of people and models more visible, but the survey found that attribution is usually attached to a whole project or paper, not to each claim.
+
+<details>
+<summary>Provenance formats, disclosure policies and adoption</summary>
+
+The survey records a metadata format, several disclosure labels and policies, and one measure of current practice.
+
+**A metadata format**
+
+::: plain
+- **[`formalization.yaml`](https://github.com/mathlib-initiative/formalization.yaml) v0.4** (Mathlib Initiative): records sources with the authors' endorsement, the automation method (manual, copilot, agent, autonomous), models, cost, review status, and the alignment of statements. Palomar requires it, openai/math uses it, and AGMAI recommends it. Unknown keys are tolerated. **It has no fields for routes, obstacles or negative results.**
+:::
+
+**Labels and policies**
+
+::: plain
+- **Hexagon**: two mandatory labels (see [Deposit and citation](#venues)).
+- **ProofForum**: distinguishes "uploaded by" from "generated by".
+- **The [LMS AI Declaration](https://www.lms.ac.uk/publications/policies/AI)**: mandatory; covers "constructing or verifying proofs"; bans AI in refereeing.
+- **Elsevier**: a declaration of AI use.
+- **The proposed [AIL2026](https://zenodo.org/records/23424830) labels**: for example `AI-3: Proof3 Text1`.
+- **The community wiki on AI contributions to Erdős problems**: a taxonomy of contributions.
+- **open-problems**: attribution per role ("proofs by X, reviews by Y").
+:::
+
+**Current practice**
+
+::: plain
+- **H. De Bie's [survey](https://proofsandprompts.com/2026/10/16/on-ai-statements-in-mathematics-papers/)** of 152 arXiv papers (math.CA and math.RT, September 2026): 34.9 % used AI for the mathematics, and 55.9 % had no AI statement.
+:::
+
+</details>
+
+### Maintenance, funding, access and responsibility {#governance}
+
+*Who maintains the infrastructure and is accountable for it?*
+
+[AGMAI's guidelines](https://agmai.org/general-sep29/) call for deposits in independent repositories, disclosure of prompts and compute, and reporting of unsuccessful attempts. [Lean FRO](https://lean-lang.org/fro/about/) supports the formal tooling on which many projects depend. Funding programmes shape which parts of the infrastructure receive sustained attention.
+
+Responsibility also shows in everyday contribution rules: who may change a curated database, who reviews additions to a library, who keeps the logs of a hosted investigation. A usable system needs maintainers and a durable home for its records, not only a technical interface.
+
+<details>
+<summary>Declarations, institutions and funding</summary>
+
+**Advice and declarations**
+
+::: plain
+- **[AGMAI](https://agmai.org/)** (Advisory Group on Mathematics and AI: Charles, De Lellis, Gowers, Hairer, Srivastava, Tillmann, Vakil, Witten, Wood). Its [guidelines of 29 September 2026](https://agmai.org/general-sep29/) ask labs to deposit in repositories they do not control, to disclose prompts and compute, and to publish "unsolved attempts of comparable difficulty" together with the selection procedure.
+- **The [Leiden Declaration](https://leidendeclaration.ai/)**: endorsed by the IMU, ICARM and the Mathlib Initiative, but not by the EMS.
+- **["A Severe Misalignment of AI in Mathematics"](https://mathandai.org/)**: a statement by Fields medallists.
+- **The [Association for Human Mathematics](https://www.ahmath.org/)**.
+- **Position papers**: [How to Formalize All of Mathematics](https://xenaproject.wordpress.com/2026/10/16/how-to-formalize-all-of-mathematics/) (ten principles); [Maggi](https://terrytao.wordpress.com/2026/10/18/will-it-be-a-golden-age-or-a-dark-age-for-mathematics-and-science/); Tao's [views on AI](https://teorth.github.io/tao-web/ai-views.html), which ask to "disclose the actual chat logs and traces", value "admitting the failed attempts along the way", and suggest a mechanism to put unfinished proofs "up for adoption".
+:::
+
+**Institutions**
+
+::: plain
+- [Lean FRO](https://lean-lang.org/fro/about/) and [ICARM](https://icarm.io/).
+- The [Isaac Newton Institute](https://www.newton.ac.uk/news/ini-news/ini-awarded-funding-to-host-ai-for-maths-programme/), which will host a 2027 programme on standards for evaluating AI-assisted work.
+- Fields, ICERM, SLMath and ICMS.
+:::
+
+**Funding**
+
+::: plain
+- **[Simons Foundation, \$15M](https://www.simonsfoundation.org/news/simons-foundation-launches-15m-effort-to-help-mathematicians-navigate-ai-era/)**: with Anthropic and OpenAI. Its call for Math+AI institutes is due 1 December 2026.
+- **[AI for Math Fund](https://www.renaissancephilanthropy.org/ai-for-math-fund)**: 22 awards in 2026, none on process records.
+- **[DARPA expMath](https://www.darpa.mil/research/programs/expmath-exponential-mathematics)**.
+:::
+
+**Following the news**
+
+::: plain
+- **[Proofs and Prompts](https://proofsandprompts.com/)**: keeps a running newsfeed of statements, policies and venues.
+:::
+
+</details>
+
+::: finding
+**Across all five layers:** attribution should stay attached to the work as it moves between systems, and maintenance arrangements should make clear who can correct or preserve it. The surveyed policies provide starting points, but their formats and responsibilities do not yet line up.
+:::
+
+## What would connect these layers? {#connections}
+
+<span id="many-systems"></span>
+<span id="in-brief-coverage"></span>
+<span id="gaps"></span>
+<span id="takeaways"></span>
+
+Consider a possible path: a question is listed in a registry, explored in a research workspace, formalized and registered, then explained in a deposited manuscript. Each system holds something useful. The connecting records determine whether a reader can follow the whole path.
+
+![The path of one result through four kinds of system, with their real identifier formats. Dashed: no shared identifier or format between the two. Solid: a link already in place; erdosproblems.com and Formal Conjectures point to Palomar IDs, bypassing any process record. The identifiers are listed in [the conventions below](#interoperability).](figures/flow.svg){#fig-flow fig-alt="Four boxes from top to bottom: problem registry, process record, formal proof, deposit and review, joined by dashed arrows. A solid arrow labelled Palomar IDs goes from the problem registry straight to the formal proof."}
+
+Three connections deserve particular attention:
+
+- **Link statements across systems.** Preserve the intended claim, its versions and the correspondences between registry entries, manuscripts and formal declarations.
+- **Retain attempts with their reasons.** Make routes, obstacles and refutations portable enough for another investigation to continue, and durable enough to survive a change of host.
+- **Make checks interpretable.** Attach the scope, version, reviewer and independence of each check to the claim it concerns. Keep provenance with those records.
+
+There are useful foundations already: formalization metadata, trusted target statements, versioned result IDs and curated cross-references. The missing connections identified here are an assessment of the surveyed systems, rather than a claim that every component must be rebuilt.
+
+<span id="interoperability"></span>
+
+<details>
+<summary>Existing identifiers, metadata and exchange conventions</summary>
+
+::: table-wrap
+| convention | what it carries | used by |
+|----|----|----|
+| `formalization.yaml` v0.4 | provenance, automation, review status, alignment of statements | Palomar (required), openai/math, Anthropic, Formal Frontier |
+| `Challenge.lean` + Comparator / `lake check` | the trusted formal statement, and the check that a proof proves exactly it | IEANTN, LeanEval, Palomar, Anthropic, openai/math |
+| Palomar IDs (`PALOMAR-YYYY-MM-DD-NNNNNN-vN`) | a versioned, pinned formal result | erdosproblems.com, Formal Conjectures, PFR |
+| Hexagon IDs (`hexagon:YYMM.NNNNNvN`), ProofForum IDs (`PF:YYYY.NNNNNN/vN/THM-x`) | a versioned deposit; a statement inside it | Hexagon, ProofForum |
+| Stacks tags, Wikidata QIDs, Mathlib cross-references, P14534 | identity of concepts and theorems across resources | Mathlib, 1000+ theorems, Mathswitch |
+| Erdős numbers, OEIS A-numbers, arXiv IDs, MathOverflow IDs | identity of problems and sources | most registries and trackers |
+| `semantic_hash` | identity of a Lean statement under renaming | Mathlib Initiative |
+| MCP servers, `SKILL.md`, `llms.txt` | agent access to tools, platforms and venues | Prove2Me, Hexagon, ProofForum, Palomar, LeanExplore, LMFDB |
+| `CITATION.cff` | how to cite a repository | many repositories |
+:::
+
+</details>
+
+<span id="fig-arch-a"></span>
+<span id="fig-arch-b"></span>
+<span id="fig-arch-c"></span>
+<span id="fig-architectures"></span>
+<span id="architectures"></span>
+<span id="in-brief-architectures"></span>
+
+A separate [comparison of infrastructure architectures](architectures.qmd) considers one platform, a federation and a new registry. It develops our proposal to start with shared records; the present page supplies the landscape behind that proposal.
+
+## Glossary {#glossary}
+
+::: glossary
+
+[kernel]{#glossary-kernel}
+: The small core of a proof assistant (Lean, Isabelle, Coq…) that checks every step of a formal proof. It checks the proof against the formal statement, not against what the author meant.
+
+[statement faithfulness]{#glossary-faithfulness}
+: Whether a formal statement says what the informal one says. A proof of an unfaithful statement proves a different theorem.
+
+[Comparator]{#glossary-comparator}
+: A Lean tool, now part of Lean core, that checks that a proof proves exactly the trusted statement written in a `Challenge.lean` file.
+
+[blueprint]{#glossary-blueprint}
+: A human-readable plan of a formalization: the statements and their dependencies, linked to the Lean code, showing what is done and what is left.
+
+[crosswalk]{#glossary-crosswalk}
+: A table of correspondences saying that identifiers in different registries name the same problem or statement.
+
+[QID]{#glossary-qid}
+: The identifier of an item in Wikidata (Q followed by digits), used by Mathlib and 1000+ theorems to name concepts and theorems.
+
+[`semantic_hash`]{#glossary-semantic-hash}
+: A fingerprint of a Lean statement that does not change when declarations are renamed.
+
+[`formalization.yaml`]{#glossary-formalization-yaml}
+: A metadata file describing a formalization: sources, how much was automated, which models were used, review status, alignment of statements. YAML is a plain-text format for structured data.
+
+[process record]{#glossary-process-record}
+: A structured record of a search rather than of its result: routes tried, obstacles, refutations, abandoned approaches, with the reasons.
+
+[MCP]{#glossary-mcp}
+: Model Context Protocol: a standard way for an AI agent to call an external tool or service, such as a proof assistant, a database or a search engine.
+
+[`SKILL.md`]{#glossary-skill}
+: A file of instructions that packages a task for an AI agent, such as formalizing a statement or refereeing a proof.
+
+[harness]{#glossary-harness}
+: The program around a model that runs it as an agent: which tools it can call, what it sees, when it stops, how its output is checked.
+
+[CI]{#glossary-ci}
+: Continuous integration: checks that run automatically on every change to a repository, for example rebuilding a Lean project.
+
+[overlay journal]{#glossary-overlay}
+: A journal that reviews and endorses work deposited elsewhere (arXiv, a repository) instead of publishing it itself.
+:::
+## Sources and method {#sources}
+
+**Scope.** This page is a snapshot of a survey made on 21 October 2026 by [the team](../about.qmd), using AI. Project descriptions, statuses and figures refer to that date and have not been updated since. The survey covers about 330 projects: formal tools, knowledge resources, problem collections, collaborative research, venues and institutions. Projects were included because they serve a function in this landscape and are public, active or historically important; popularity was not a criterion.
+
+**Checks.** Each project was read on its own page, or through its API or repository when the site blocks automated clients. A second pass checked the figures, dates and quotations against those sources, and every link on this page was tested on the survey date.
+
+**How to read it.** A figure marked "self-reported" is the project's own claim; we did not verify it. The closing assessments of each layer summarize what the survey found; they are not claims about every project that exists.
+
+**Limits.** The survey has surely missed projects, and some descriptions may be wrong. To report an error or a missing project, [open an issue](https://github.com/human-ai-mathematics/human-ai-mathematics.github.io/issues) on GitHub or see the other contact options on the [About](../about.qmd) page.

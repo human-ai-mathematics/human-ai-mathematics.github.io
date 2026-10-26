@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 70" width="120" height="70" fill="none" stroke="#1d2330" stroke-width="2"><style>circle,rect{fill:#fff}.acc{stroke:#c4511a}</style>
+<path d="M15 15 60 35M105 15 60 35M15 55 60 35M105 55 60 35"/>
+<rect class="acc" x="47" y="23" width="26" height="24" rx="3"/>
+<circle cx="15" cy="15" r="6"/><circle cx="105" cy="15" r="6"/>
+<circle cx="15" cy="55" r="6"/><circle cx="105" cy="55" r="6"/>
+</svg>

@@ -1,0 +1,167 @@
+/*-- scss:defaults --*/
+
+// The site's palette and type, on top of the cosmo theme.
+$body-bg: #fbfaf7;
+$body-color: #1d2330;
+$text-muted: #5b6372;
+$border-color: #e3e0d8;
+$link-color: #c4511a;
+$primary: #c4511a;
+$navbar-bg: #fbfaf7;
+$navbar-fg: #1d2330;
+$navbar-hl: #c4511a;
+$footer-bg: #fbfaf7;
+$code-color: #1d2330;
+$code-bg: transparent;
+
+$font-family-sans-serif: system-ui, -apple-system, "Segoe UI", sans-serif;
+$font-family-base: Georgia, "Iowan Old Style", "Times New Roman", serif;
+$headings-font-family: $font-family-sans-serif;
+$font-size-root: 17px;
+$line-height-base: 1.6;
+
+/*-- scss:rules --*/
+
+$rule: #e3e0d8;
+$muted: #5b6372;
+$accent: #c4511a;
+$sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+
+a { text-underline-offset: 3px; }
+code { font-size: 0.85em; overflow-wrap: anywhere; padding: 0; }
+.nav-footer { font-family: $sans; }
+
+.quarto-title .title { font-size: 2.2rem; line-height: 1.15; letter-spacing: -0.01em; }
+.quarto-title .subtitle { font-size: 1.2rem; color: $muted; font-family: $font-family-base; }
+// The description is for search engines and link previews; the subtitle already says it.
+.quarto-title-block .description { display: none; }
+.navbar, #TOC { font-family: $sans; }
+
+// The second selector outranks Quarto's rule that tightens the first h2 of a page.
+#quarto-content main h2,
+#quarto-content main section:first-of-type h2:first-of-type {
+  font-size: 1.1rem;
+  margin: 3rem 0 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $muted;
+  border-bottom: none;
+}
+h3 { font-size: 1.15rem; }
+
+// Quarto puts a class on a div around the paragraph or list it applies to.
+.note, .finding, .key { margin: 0 0 1rem; }
+.note > :last-child, .finding > :last-child, .key > :last-child, .part > :last-child { margin-bottom: 0; }
+
+.aims ol, .steps ol, .plain ul { padding-left: 1.3rem; }
+.aims li { margin-bottom: 0.6rem; }
+.steps li, .plain li { margin-bottom: 0.8rem; }
+
+.card {
+  background: #fff;
+  border: 1px solid $rule;
+  border-radius: 8px;
+  padding: 1.2rem 1.3rem;
+  margin-bottom: 1rem;
+  h3 { margin: 0 0 0.4rem; }
+  p:last-child { margin-bottom: 0; }
+}
+// In a grid the gap spaces the cards, and they share the height of the row.
+.grid > .card { margin-bottom: 0; }
+
+/* A card's kind: "Survey" or "Proposal". */
+.tag {
+  display: block;
+  margin-bottom: 0.5rem;
+  font: 600 0.72rem/1 $sans;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $muted;
+  > p { margin: 0; }
+}
+
+/* The pages under a card's main link, and when the card was last updated. */
+.card-links, .card-date { display: block; font: 0.85rem/1.5 $sans; }
+.card-date > p { margin: 0; }
+.card-date { margin-top: 0.6rem; color: $muted; }
+
+.note {
+  border-left: 3px solid $accent;
+  padding: 0.2rem 0 0.2rem 1rem;
+  color: $muted;
+}
+
+/* A conclusion we draw from a section: a note, but in the text colour. */
+.finding { border-left: 3px solid $accent; padding: 0.2rem 0 0.2rem 1rem; }
+
+/* The one sentence a page turns on. */
+.key { margin: 1.5rem 0; font: 600 1.2rem/1.45 $sans; }
+
+/* The start of a part, in a page long enough to have several. */
+.part {
+  margin: 4rem 0 0;
+  padding-top: 1.2rem;
+  border-top: 1px solid $rule;
+  font: 700 1.6rem/1.2 $sans;
+  span {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: $accent;
+  }
+}
+
+.team ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+
+/* A table; on a narrow screen it scrolls inside its wrapper, not the page. */
+.table-wrap { overflow-x: auto; margin: 0 0 1.5rem; }
+table { min-width: 34rem; font-size: 0.9rem; line-height: 1.45; }
+th { font-family: $sans; font-weight: 600; color: $muted; }
+td code { overflow-wrap: normal; }
+
+figcaption { color: $muted; font: 0.85rem/1.4 $sans; }
+#fig-flow img { max-width: 24rem; }
+
+.glossary dt { font-family: $sans; font-weight: 600; }
+.glossary dd { margin: 0 0 0.9rem; }
+
+// The landscape uses layers as its main reading structure.
+body.landscape-page {
+  #quarto-content main h2,
+  #quarto-content main section:first-of-type h2:first-of-type {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    text-transform: none;
+    letter-spacing: normal;
+    color: $body-color;
+    border-top: 1px solid $rule;
+    padding-top: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  main h3 { margin-top: 1.8rem; }
+  main .finding { margin: 1.7rem 0 0; }
+
+  main details {
+    margin: 0.8rem 0 1.5rem;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid $rule;
+    border-radius: 6px;
+    font-size: 0.94rem;
+
+    summary {
+      font-family: $sans;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    summary:focus-visible { outline: 2px solid $accent; outline-offset: 4px; }
+    &[open] > summary { margin-bottom: 1rem; }
+    > :last-child { margin-bottom: 0; }
+  }
+
+  #fig-layers img { width: 100%; max-width: 27rem; }
+  #fig-arch-a img, #fig-arch-b img, #fig-arch-c img { max-width: 22rem; }
+}

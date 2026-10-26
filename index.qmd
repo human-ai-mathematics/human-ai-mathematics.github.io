@@ -1,0 +1,51 @@
+---
+pagetitle: "Human–AI Mathematics"
+title: "Human–AI Mathematics"
+subtitle: "What a framework for mathematics done with AI has to do, what already exists, and a modest proposal for one part of it."
+description: "What a framework for mathematics done with AI has to do, what already exists, and a modest proposal for one part of it."
+date: 2026-10-26
+published-title: "Last revised"
+toc: false
+---
+
+AI systems now produce mathematics in quantity: proofs of open problems, very large formal libraries, bulk releases of manuscripts. In a few months the mathematical community has answered with a large number of projects, each addressing one part of the problem: problem registries, formal libraries, checkers, agent harnesses, deposit and review venues, disclosure rules. What is missing is a view of the whole: what a framework has to do, which parts are well served, where efforts overlap, and where nothing exists yet.
+
+## Why this project
+
+We started with the Kannan–Lovász–Simonovits conjecture as a testbed. To work on it with AI agents, we built [conjecture search](conjecture-search/proposal.qmd): one way of organizing research between mathematicians and AI, which keeps a shared record of the search and certifies every status by an independent review or a named person. Its [template](https://github.com/human-ai-mathematics/conjecture-search-template) can start a search on any statement.
+
+In October 2026, while our search was running, KLS was proved three times: three teams, each working with frontier AI models, reached independent proofs within days of one another. Our manuscript became [an account of the theorem and its methods](kls-conjecture-search/). The effort was spent three times over, and almost none of it was shared along the way: which routes each team tried, which obstacles stopped them, which ideas they set aside.
+
+Meanwhile, many groups were building tools of their own. That convinced us that research with AI needs shared infrastructure more than one more isolated tool, and that before proposing anything, one should look carefully at what already exists. Hence [the landscape](landscape/survey.qmd), and from it [a comparison of architectures](landscape/architectures.qmd) for connecting what exists.
+
+## Projects
+
+::::: grid
+:::: {.g-col-12 .g-col-md-6 .card}
+::: tag
+Survey
+:::
+
+### [The landscape](landscape/survey.qmd)
+
+What a framework for mathematics with AI has to do, and about 150 projects mapped against it, layer by layer, from sources to communication.
+
+[[Three architectures](landscape/architectures.qmd)]{.card-links}
+
+::: card-date
+Updated 21 October 2026
+:::
+::::
+
+:::: {.g-col-12 .g-col-md-6 .card}
+::: tag
+Proposal
+:::
+
+### [Conjecture search](conjecture-search/proposal.qmd)
+
+A shared, certified record of a sustained human–AI search on one hard statement.
+
+[[How it works](conjecture-search/how-it-works.qmd) · [The KLS manuscript](kls-conjecture-search/) · [The template](https://github.com/human-ai-mathematics/conjecture-search-template)]{.card-links}
+::::
+:::::
