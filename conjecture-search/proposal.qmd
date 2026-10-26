@@ -1,8 +1,11 @@
 ---
 pagetitle: "Conjecture search"
 title: "Conjecture search"
-subtitle: "Our modest proposal for one part of the [landscape](../landscape/): a sustained search, by humans and AI agents, to prove or refute one hard statement, in which every result can be trusted."
+subtitle: "Our modest proposal for one part of the [landscape](../landscape/survey.qmd): a sustained search, by humans and AI agents, to prove or refute one hard statement, in which every result can be trusted."
 description: "A sustained human–AI search to prove or refute one hard statement, with every status certified: principles, the KLS manuscript, the template, and what comes next."
+date: 2026-10-26
+aliases: [index.html]
+published-title: "Last revised"
 ---
 
 On a hard question, agents produce proof attempts, reductions, numerical experiments and candidate counterexamples, over many sessions. Without structure, what was learned is lost between sessions, dead ends are explored again, and a convincing argument passes for a proof. Conjecture search gives that work one shared record, and a manuscript a mathematician can read and check.
@@ -20,7 +23,7 @@ How the pieces fit together, from the life of a statement to the ways to contrib
 
 ## In the landscape
 
-Conjecture search serves one function of the [landscape](../landscape/): the record of the work, kept alongside a manuscript and a certification of every status. For one hard statement studied over many sessions and agents, it keeps:
+Conjecture search serves one function of the [landscape](../landscape/survey.qmd): the record of the work, kept alongside a manuscript and a certification of every status. For one hard statement studied over many sessions and agents, it keeps:
 
 ::: plain
 - **a record of the work:** the portfolio of routes, dated checkpoints, obstacles, and refutations counted as results;
@@ -29,7 +32,7 @@ Conjecture search serves one function of the [landscape](../landscape/): the rec
 - **a bridge to formal evidence:** a Lean repository alongside.
 :::
 
-**We are not alone.** Several projects created in 2026 also record the routes and dead ends of a search driven by AI agents: among them [Euler](https://github.com/canghaimeng/Euler), [Math Lab](https://github.com/Joe975/math-lab), [labyrinth-exploration](https://github.com/nasqret/labyrinth-exploration), [Plectis](https://github.com/wcook04/plectis-erdos) and [OpenTheory](https://github.com/kaminocorp/opentheory); the [math-research-harness](https://github.com/haruhisa-enomoto/math-research-harness) is a repository template close to ours; DeepMind's [AI co-mathematician](https://arxiv.org/abs/2605.06651) tracks failed hypotheses in a closed system. They are compared on the [landscape page](../landscape/#process-records). What we did not find elsewhere is the combination: a manuscript written for readers as the home of the statements, a ledger in which a refutation is a result, and certification by an independent review or a named person, on a single statement studied in depth.
+**We are not alone.** Several projects created in 2026 also record the routes and dead ends of a search driven by AI agents: among them [Euler](https://github.com/canghaimeng/Euler), [Math Lab](https://github.com/Joe975/math-lab), [labyrinth-exploration](https://github.com/nasqret/labyrinth-exploration), [Plectis](https://github.com/wcook04/plectis-erdos) and [OpenTheory](https://github.com/kaminocorp/opentheory); the [math-research-harness](https://github.com/haruhisa-enomoto/math-research-harness) is a repository template close to ours; DeepMind's [AI co-mathematician](https://arxiv.org/abs/2605.06651) tracks failed hypotheses in a closed system. They are compared on the [landscape page](../landscape/survey.qmd#process-records). What we did not find elsewhere is the combination: a manuscript written for readers as the home of the statements, a ledger in which a refutation is a result, and certification by an independent review or a named person, on a single statement studied in depth.
 
 **What it lacks**, measured against the rest of the landscape:
 
@@ -44,7 +47,7 @@ Conjecture search serves one function of the [landscape](../landscape/): the rec
 
 **How it could plug in.** Statements could take their identity from [Formal Conjectures](https://github.com/google-deepmind/formal-conjectures) or Wikidata; formal results could go to Palomar; manuscripts to [Hexagon](https://hexagonmath.org/) or arXiv; verification of an exact version to [ProofForum](https://www.proofforum.org/); exposition to venues such as [Mathematical Discourse](https://www.mathematicaldiscourse.org/). The template would keep the part none of them holds: the record of the search. Its ledger is also close to the shared records that the landscape page proposes for a federation of tools, so it could serve as one test of them.
 
-## Projects
+## Searches and template
 
 ::: card
 ### [The KLS theorem and its methods](../kls-conjecture-search/)

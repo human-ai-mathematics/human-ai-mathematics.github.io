@@ -2,29 +2,42 @@ project:
   type: website
   output-dir: _site
   render: ["*.qmd", "**/*.qmd", "!drafts/"]
-  resources: [figures/*.svg]
 
 website:
   title: "Human–AI Mathematics"
+  site-url: https://human-ai-mathematics.github.io
   navbar:
     left:
       - text: Landscape
-        href: landscape/index.qmd
+        menu:
+          - text: Overview
+            href: landscape/survey.qmd
+          - text: Architectures
+            href: landscape/architectures.qmd
       - text: Conjecture search
         menu:
           - text: Overview
-            href: conjecture-search/index.qmd
+            href: conjecture-search/proposal.qmd
           - text: How it works
             href: conjecture-search/how-it-works.qmd
+    right:
+      - text: About
+        href: about.qmd
   page-footer:
-    center: |
-      Supported by [Project Numina](https://projectnumina.ai/). Contact: nicolas.brosse [at] ensae.fr.
+    center: "Supported by [Project Numina](https://projectnumina.ai/) and the European Research Council (grant 101201229) · [About](/about.qmd)"
 
-      Nicolas Brosse works at CREST, ENSAE Paris, Institut Polytechnique de Paris, with Arnak Dalalyan. His work is funded by the European Research Council (ERC) under the European Union's Horizon Europe research and innovation programme (grant agreement No. 101201229).
+author:
+  - Nicolas Brosse
+  - Jia Li
+  - Yuwei Lyu
+citation:
+  container-title: "Human–AI Mathematics"
+date-format: long
+google-scholar: true
 
 format:
   html:
-    theme: [cosmo, custom.scss]
+    theme: [cosmo, assets/custom.scss]
     from: markdown-smart
     grid:
       body-width: 720px

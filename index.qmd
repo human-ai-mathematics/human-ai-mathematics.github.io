@@ -3,47 +3,49 @@ pagetitle: "Human–AI Mathematics"
 title: "Human–AI Mathematics"
 subtitle: "What a framework for mathematics done with AI has to do, what already exists, and a modest proposal for one part of it."
 description: "What a framework for mathematics done with AI has to do, what already exists, and a modest proposal for one part of it."
+date: 2026-10-26
+published-title: "Last revised"
 toc: false
 ---
-
-::: note
-This site is meant to be temporary. Many groups are now building tools, registries, venues and norms for mathematics with AI, and this work makes most sense as part of a larger initiative or collaboration. When one exists that this work can join, the site will point there. Until then, feedback is welcome: start a [discussion](https://github.com/orgs/human-ai-mathematics/discussions) or open an [issue](https://github.com/human-ai-mathematics/human-ai-mathematics.github.io/issues) on GitHub, or write to nicolas.brosse \[at\] ensae.fr.
-:::
 
 AI systems now produce mathematics in quantity: proofs of open problems, very large formal libraries, bulk releases of manuscripts. In a few months the mathematical community has answered with a large number of projects, each addressing one part of the problem: problem registries, formal libraries, checkers, agent harnesses, deposit and review venues, disclosure rules. What is missing is a view of the whole: what a framework has to do, which parts are well served, where efforts overlap, and where nothing exists yet.
 
 ## Why this project
 
-We started with the Kannan–Lovász–Simonovits conjecture as a testbed. In October 2026 it was proved three times: three teams, each working with frontier AI models, reached independent proofs within days of one another. The effort was spent three times over, and almost none of it was shared along the way: which routes each team tried, which obstacles stopped them, which ideas they set aside.
+We started with the Kannan–Lovász–Simonovits conjecture as a testbed. To work on it with AI agents, we built [conjecture search](conjecture-search/proposal.qmd): one way of organizing research between mathematicians and AI, which keeps a shared record of the search and certifies every status by an independent review or a named person. Its [template](https://github.com/human-ai-mathematics/conjecture-search-template) can start a search on any statement.
 
-That convinced us that research with AI needs shared infrastructure more than one more isolated tool, and that before proposing anything, one should look carefully at what already exists.
+In October 2026, while our search was running, KLS was proved three times: three teams, each working with frontier AI models, reached independent proofs within days of one another. Our manuscript became [an account of the theorem and its methods](kls-conjecture-search/). The effort was spent three times over, and almost none of it was shared along the way: which routes each team tried, which obstacles stopped them, which ideas they set aside.
 
-## On this site
+Meanwhile, many groups were building tools of their own. That convinced us that research with AI needs shared infrastructure more than one more isolated tool, and that before proposing anything, one should look carefully at what already exists. Hence [the landscape](landscape/survey.qmd), and from it [a comparison of architectures](landscape/architectures.qmd) for connecting what exists.
 
-::: card
-::: {.tag .live}
+## Projects
+
+::::: grid
+:::: {.g-col-12 .g-col-md-6 .card}
+::: tag
+Survey
+:::
+
+### [The landscape](landscape/survey.qmd)
+
+What a framework for mathematics with AI has to do, and about 150 projects mapped against it, layer by layer, from sources to communication.
+
+[[Three architectures](landscape/architectures.qmd)]{.card-links}
+
+::: card-date
 Updated 21 October 2026
 :::
+::::
 
-### [The landscape](landscape/)
-
-A unified view of what a framework for mathematics with AI has to do, and a map of what exists against it: about 150 projects, from problem registries and formal libraries to research records, certification, venues and norms. With its sources and its date, since the field changes weekly.
-:::
-
-::: card
+:::: {.g-col-12 .g-col-md-6 .card}
 ::: tag
-Our proposal
+Proposal
 :::
 
-### [Conjecture search](conjecture-search/)
+### [Conjecture search](conjecture-search/proposal.qmd)
 
-A modest proposal for one part of the landscape: keeping the record of a sustained search on one hard statement, by humans and AI agents, with every status certified by an independent review or a named person. Its principles, how it compares with similar projects, the KLS manuscript it produced, and the template to start a new search.
-:::
+A shared, certified record of a sustained human–AI search on one hard statement.
 
-## Team
-
-::: team
-- [Nicolas Brosse](https://github.com/nbrosse)
-- [Jia Li](https://github.com/liyongsea)
-- [Yuwei Lyu](https://github.com/lyw-ops)
-:::
+[[How it works](conjecture-search/how-it-works.qmd) · [The KLS manuscript](kls-conjecture-search/) · [The template](https://github.com/human-ai-mathematics/conjecture-search-template)]{.card-links}
+::::
+:::::

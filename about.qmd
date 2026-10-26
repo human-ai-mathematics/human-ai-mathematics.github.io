@@ -1,0 +1,30 @@
+---
+pagetitle: "About"
+title: "About"
+subtitle: "Who we are, who supports this work, and how to reach us."
+description: "The team behind Human–AI Mathematics, its support, and how to give feedback."
+toc: false
+author: []
+citation: false
+google-scholar: false
+---
+
+## Team
+
+::: team
+- [Nicolas Brosse](https://github.com/nbrosse)
+- [Jia Li](https://github.com/liyongsea)
+- [Yuwei Lyu](https://github.com/lyw-ops)
+:::
+
+## Support
+
+This work is supported by [Project Numina](https://projectnumina.ai/).
+
+Nicolas Brosse works at CREST, ENSAE Paris, Institut Polytechnique de Paris, with Arnak Dalalyan. His work is funded by the European Research Council (ERC) under the European Union's Horizon Europe research and innovation programme (grant agreement No. 101201229).
+
+## This site
+
+This site is meant to be temporary. Many groups are now building tools, registries, venues and norms for mathematics with AI, and this work makes most sense as part of a larger initiative or collaboration. When one exists that this work can join, the site will point there.
+
+Until then, feedback is welcome: start a [discussion](https://github.com/orgs/human-ai-mathematics/discussions) or open an [issue](https://github.com/human-ai-mathematics/human-ai-mathematics.github.io/issues) on GitHub, or write to nicolas.brosse \[at\] ensae.fr.

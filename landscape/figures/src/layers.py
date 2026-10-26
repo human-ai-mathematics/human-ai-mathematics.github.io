@@ -1,6 +1,6 @@
-"""Draw figure 1 (five layers and two cross-cutting concerns) as figures/layers.svg.
+"""Draw figure 1 (five layers and two cross-cutting concerns) as landscape/figures/layers.svg.
 
-Run from the repository root: python3 figures/src/layers.py
+Run from the repository root: python3 landscape/figures/src/layers.py
 """
 
 FG, MUTED, RULE, ACCENT, CARD = "#1d2330", "#5b6372", "#e3e0d8", "#c4511a", "#ffffff"
@@ -38,4 +38,4 @@ for j, (name, gloss) in enumerate(CROSS):
     parts.append(f'<text transform="translate({cx} {cy}) rotate(-90)" text-anchor="middle" font-size="13" '
                  f'fill="{MUTED}"><tspan font-weight="700" fill="{FG}">{name}</tspan> · {gloss}</text>')
 parts.append("</svg>\n")
-open("figures/layers.svg", "w").write("".join(parts))
+open("landscape/figures/layers.svg", "w").write("".join(parts))

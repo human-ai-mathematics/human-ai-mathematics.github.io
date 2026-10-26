@@ -66,18 +66,24 @@ h3 { font-size: 1.15rem; }
   h3 { margin: 0 0 0.4rem; }
   p:last-child { margin-bottom: 0; }
 }
+// In a grid the gap spaces the cards, and they share the height of the row.
+.grid > .card { margin-bottom: 0; }
 
-/* A card's status: "Available" (accented) or "Being explored". */
+/* A card's kind: "Survey" or "Proposal". */
 .tag {
-  display: inline-block;
+  display: block;
   margin-bottom: 0.5rem;
   font: 600 0.72rem/1 $sans;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: $muted;
-  &.live { color: $accent; }
   > p { margin: 0; }
 }
+
+/* The pages under a card's main link, and when the card was last updated. */
+.card-links, .card-date { display: block; font: 0.85rem/1.5 $sans; }
+.card-date > p { margin: 0; }
+.card-date { margin-top: 0.6rem; color: $muted; }
 
 .note {
   border-left: 3px solid $accent;
